@@ -1,0 +1,484 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="c2b2d9d3-a8fd-46b2-9f9b-183505cab9c3" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Controller/WeatherController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/DAO/WeatherRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Domain/Weather.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Service/WeatherService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Service/WeatherServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/SpringBootWebAppDB.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/SpringBootWebApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../springPressOrder/src/main/java/be/springPressOrder/controllers/MachineController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../springPressOrder/src/main/java/be/springPressOrder/domain/Status.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../springPressOrder/src/main/resources/templates/machineshow.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../springPressOrder/src/main/resources/templates/orderedit.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../springPressOrder/src/main/resources/templates/showprediction.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../springPressOrder/src/main/resources/templates/storage.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../springPressOrder/src/main/java/be/springPressOrder/Data/OrderData.java" beforeDir="false" afterPath="$PROJECT_DIR$/../springPressOrder/src/main/java/be/springPressOrder/Data/OrderData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../springPressOrder/src/main/java/be/springPressOrder/Data/PressOrderData.java" beforeDir="false" afterPath="$PROJECT_DIR$/../springPressOrder/src/main/java/be/springPressOrder/Data/PressOrderData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../springPressOrder/src/main/java/be/springPressOrder/SecurityConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/../springPressOrder/src/main/java/be/springPressOrder/SecurityConfiguration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../springPressOrder/src/main/java/be/springPressOrder/SpringBootWebAppDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/../springPressOrder/src/main/java/be/springPressOrder/SpringBootWebAppDB.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../springPressOrder/src/main/java/be/springPressOrder/controllers/OrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../springPressOrder/src/main/java/be/springPressOrder/controllers/OrderController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../springPressOrder/src/main/java/be/springPressOrder/controllers/PressOrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../springPressOrder/src/main/java/be/springPressOrder/controllers/PressOrderController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../springPressOrder/src/main/java/be/springPressOrder/controllers/RestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../springPressOrder/src/main/java/be/springPressOrder/controllers/RestController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../springPressOrder/src/main/java/be/springPressOrder/controllers/ScheduleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../springPressOrder/src/main/java/be/springPressOrder/controllers/ScheduleController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../springPressOrder/src/main/java/be/springPressOrder/controllers/StorageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../springPressOrder/src/main/java/be/springPressOrder/controllers/StorageController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../springPressOrder/src/main/java/be/springPressOrder/controllers/TechnicianController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../springPressOrder/src/main/java/be/springPressOrder/controllers/TechnicianController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../springPressOrder/src/main/java/be/springPressOrder/dao/OrderRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../springPressOrder/src/main/java/be/springPressOrder/dao/OrderRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../springPressOrder/src/main/java/be/springPressOrder/dao/PressOrderRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../springPressOrder/src/main/java/be/springPressOrder/dao/PressOrderRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../springPressOrder/src/main/java/be/springPressOrder/dao/RequestTechnicianRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../springPressOrder/src/main/java/be/springPressOrder/dao/RequestTechnicianRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../springPressOrder/src/main/java/be/springPressOrder/dao/ScheduleRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../springPressOrder/src/main/java/be/springPressOrder/dao/ScheduleRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../springPressOrder/src/main/java/be/springPressOrder/dao/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../springPressOrder/src/main/java/be/springPressOrder/dao/UserRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../springPressOrder/src/main/java/be/springPressOrder/domain/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/../springPressOrder/src/main/java/be/springPressOrder/domain/Client.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../springPressOrder/src/main/java/be/springPressOrder/domain/Fruit.java" beforeDir="false" afterPath="$PROJECT_DIR$/../springPressOrder/src/main/java/be/springPressOrder/domain/Fruit.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../springPressOrder/src/main/java/be/springPressOrder/domain/FruitData.java" beforeDir="false" afterPath="$PROJECT_DIR$/../springPressOrder/src/main/java/be/springPressOrder/domain/FruitData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../springPressOrder/src/main/java/be/springPressOrder/domain/Machine.java" beforeDir="false" afterPath="$PROJECT_DIR$/../springPressOrder/src/main/java/be/springPressOrder/domain/Machine.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../springPressOrder/src/main/java/be/springPressOrder/domain/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/../springPressOrder/src/main/java/be/springPressOrder/domain/Order.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../springPressOrder/src/main/java/be/springPressOrder/domain/Prediction.java" beforeDir="false" afterPath="$PROJECT_DIR$/../springPressOrder/src/main/java/be/springPressOrder/domain/Prediction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../springPressOrder/src/main/java/be/springPressOrder/domain/PressOrder.java" beforeDir="false" afterPath="$PROJECT_DIR$/../springPressOrder/src/main/java/be/springPressOrder/domain/PressOrder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../springPressOrder/src/main/java/be/springPressOrder/domain/Rapport.java" beforeDir="false" afterPath="$PROJECT_DIR$/../springPressOrder/src/main/java/be/springPressOrder/domain/Rapport.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../springPressOrder/src/main/java/be/springPressOrder/domain/Schedule.java" beforeDir="false" afterPath="$PROJECT_DIR$/../springPressOrder/src/main/java/be/springPressOrder/domain/Schedule.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../springPressOrder/src/main/java/be/springPressOrder/domain/Storage.java" beforeDir="false" afterPath="$PROJECT_DIR$/../springPressOrder/src/main/java/be/springPressOrder/domain/Storage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../springPressOrder/src/main/java/be/springPressOrder/domain/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/../springPressOrder/src/main/java/be/springPressOrder/domain/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../springPressOrder/src/main/java/be/springPressOrder/domain/Weather.java" beforeDir="false" afterPath="$PROJECT_DIR$/../springPressOrder/src/main/java/be/springPressOrder/domain/Weather.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../springPressOrder/src/main/java/be/springPressOrder/services/PressSystemService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../springPressOrder/src/main/java/be/springPressOrder/services/PressSystemService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../springPressOrder/src/main/java/be/springPressOrder/services/PressSystemServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../springPressOrder/src/main/java/be/springPressOrder/services/PressSystemServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../springPressOrder/src/main/java/be/springPressOrder/services/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../springPressOrder/src/main/java/be/springPressOrder/services/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../springPressOrder/src/main/java/be/springPressOrder/services/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../springPressOrder/src/main/java/be/springPressOrder/services/UserServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../springPressOrder/src/main/resources/templates/fragments/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/../springPressOrder/src/main/resources/templates/fragments/header.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../springPressOrder/src/main/resources/templates/orderbyid.html" beforeDir="false" afterPath="$PROJECT_DIR$/../springPressOrder/src/main/resources/templates/machines.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../springPressOrder/src/main/resources/templates/orderform.html" beforeDir="false" afterPath="$PROJECT_DIR$/../springPressOrder/src/main/resources/templates/orderform.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../springPressOrder/src/main/resources/templates/orders.html" beforeDir="false" afterPath="$PROJECT_DIR$/../springPressOrder/src/main/resources/templates/orders.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../springPressOrder/src/main/resources/templates/ordersshow.html" beforeDir="false" afterPath="$PROJECT_DIR$/../springPressOrder/src/main/resources/templates/ordersshow.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../springPressOrder/src/main/resources/templates/pressorderform.html" beforeDir="false" afterPath="$PROJECT_DIR$/../springPressOrder/src/main/resources/templates/pressorderform.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../springPressOrder/src/main/resources/templates/pressorders.html" beforeDir="false" afterPath="$PROJECT_DIR$/../springPressOrder/src/main/resources/templates/pressorders.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../springPressOrder/src/main/resources/templates/pressordersshow.html" beforeDir="false" afterPath="$PROJECT_DIR$/../springPressOrder/src/main/resources/templates/pressordersshow.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../springPressOrder/src/main/resources/templates/request.html" beforeDir="false" afterPath="$PROJECT_DIR$/../springPressOrder/src/main/resources/templates/request.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../springPressOrder/src/main/resources/templates/requestForm.html" beforeDir="false" afterPath="$PROJECT_DIR$/../springPressOrder/src/main/resources/templates/requestForm.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../springPressOrder/src/main/resources/templates/technicianOverview.html" beforeDir="false" afterPath="$PROJECT_DIR$/../springPressOrder/src/main/resources/templates/requests.html" afterDir="false" />
+    </list>
+    <ignored path="$PROJECT_DIR$/out/" />
+    <ignored path="$PROJECT_DIR$/target/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/SpringBootWebAppDB.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="306">
+              <caret line="18" column="96" lean-forward="true" selection-start-line="18" selection-start-column="51" selection-end-line="18" selection-end-column="96" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/dummyWeatherAPI.iml">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret selection-end-line="18" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/pom.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="303">
+              <caret line="54" column="8" selection-start-line="54" selection-start-column="8" selection-end-line="58" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/Service/WeatherService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="68">
+              <caret line="7" column="8" selection-start-line="7" selection-start-column="8" selection-end-line="7" selection-end-column="8" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/Service/WeatherServiceImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="68">
+              <caret line="8" selection-start-line="8" selection-end-line="8" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/DAO/WeatherRepository.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="85">
+              <caret line="6" column="17" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/Controller/WeatherController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="187">
+              <caret line="11" selection-start-line="11" selection-end-line="11" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/SpringBootWebApplication.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="85">
+              <caret line="10" column="1" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="1" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/Domain/Weather.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/application.properties" />
+        <option value="$PROJECT_DIR$/src/main/java/DAO/WeatherRepository.java" />
+        <option value="$PROJECT_DIR$/src/main/java/SpringBootWebAppDB.java" />
+        <option value="$PROJECT_DIR$/src/main/java/SpringBootWebApplication.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Service/WeatherServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Service/WeatherService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Controller/WeatherController.java" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="1">
+    <option name="x" value="-7" />
+    <option name="width" value="974" />
+    <option name="height" value="1047" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="dummyWeatherAPI" type="b2602c69:ProjectViewProjectNode" />
+              <item name="dummyWeatherAPI" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="dummyWeatherAPI" type="b2602c69:ProjectViewProjectNode" />
+              <item name="dummyWeatherAPI" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="dummyWeatherAPI" type="b2602c69:ProjectViewProjectNode" />
+              <item name="dummyWeatherAPI" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="dummyWeatherAPI" type="b2602c69:ProjectViewProjectNode" />
+              <item name="dummyWeatherAPI" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="dummyWeatherAPI" type="b2602c69:ProjectViewProjectNode" />
+              <item name="dummyWeatherAPI" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="Controller" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="dummyWeatherAPI" type="b2602c69:ProjectViewProjectNode" />
+              <item name="dummyWeatherAPI" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="DAO" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="dummyWeatherAPI" type="b2602c69:ProjectViewProjectNode" />
+              <item name="dummyWeatherAPI" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="Service" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="dummyWeatherAPI" type="b2602c69:ProjectViewProjectNode" />
+              <item name="dummyWeatherAPI" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelOrder2" value="2" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
+    <property name="RequestMappingsPanelWidth2" value="75" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1558428521563" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="settings.editor.selected.configurable" value="spring" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="Domain" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Hakan\Documents\GitHub\PressSystemSE4\dummyWeatherAPI\src\main\resources" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration name="SpringBootWebApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="dummyWeatherAPI" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="SpringBootWebApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Spring Boot.SpringBootWebApplication" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpringGeneralSettings">
+    <option name="allowAutoConfigurationMode" value="true" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="c2b2d9d3-a8fd-46b2-9f9b-183505cab9c3" name="Default Changelist" comment="" />
+      <created>1558426996421</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1558426996421</updated>
+      <workItem from="1558427001893" duration="1517000" />
+      <workItem from="1558464625041" duration="985000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="2502000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-7" y="0" width="974" height="1047" extended-state="1" />
+    <editor active="true" />
+    <layout>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.404814" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Designer" order="2" />
+      <window_info id="Image Layers" order="3" />
+      <window_info id="Capture Tool" order="4" />
+      <window_info id="UI Designer" order="5" />
+      <window_info id="Favorites" order="6" side_tool="true" />
+      <window_info id="Web" order="7" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32936078" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Spring" order="7" />
+      <window_info anchor="bottom" id="Terminal" order="8" />
+      <window_info anchor="bottom" id="Docker" order="9" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
+      <window_info anchor="bottom" id="Messages" order="11" weight="0.32936078" />
+      <window_info anchor="bottom" id="Java Enterprise" order="12" />
+      <window_info anchor="bottom" id="Database Changes" order="13" />
+      <window_info anchor="bottom" id="Version Control" order="14" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Maven" order="3" />
+      <window_info anchor="right" id="Palette" order="4" />
+      <window_info anchor="right" id="Capture Analysis" order="5" />
+      <window_info anchor="right" id="Database" order="6" />
+      <window_info anchor="right" id="Palette&#9;" order="7" />
+      <window_info anchor="right" id="Theme Preview" order="8" />
+      <window_info anchor="right" id="Bean Validation" order="9" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/main/java/Domain/Weather.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="23" column="21" selection-start-line="23" selection-start-column="21" selection-end-line="23" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Service/WeatherService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="7" column="8" selection-start-line="7" selection-start-column="8" selection-end-line="7" selection-end-column="8" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Service/WeatherServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="8" selection-start-line="8" selection-end-line="8" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/DAO/WeatherRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="6" column="17" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/SpringBootWebApplication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="10" column="1" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="1" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Controller/WeatherController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" selection-start-line="11" selection-end-line="11" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/SpringBootWebAppDB.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="18" column="96" lean-forward="true" selection-start-line="18" selection-start-column="51" selection-end-line="18" selection-end-column="96" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dummyWeatherAPI.iml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-line="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="303">
+          <caret line="54" column="8" selection-start-line="54" selection-start-column="8" selection-end-line="58" />
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ProjectJDKs.UI">
+        <settings>
+          <last-edited>1.8.0_201</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>

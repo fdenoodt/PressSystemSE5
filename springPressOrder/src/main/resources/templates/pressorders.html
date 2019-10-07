@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head lang="en">
+
+    <title>PIPO Appelsap</title>
+
+    <!--/*/ <th:block th:include="fragments/headerinc :: head"></th:block> /*/-->
+</head>
+<body>
+<div class="container">
+    <!--/*/ <th:block th:include="fragments/header :: header"></th:block> /*/-->
+    <div th:if="${not #lists.isEmpty(pressOrders)}">
+        <h2>Press order list</h2>
+        <table class="table table-striped">
+            <tr>
+                <th>Id</th>
+                <th>Fruit amount</th>
+                <th>Juice</th>
+                <th>Max juice amount</th>
+                <th>Status</th>
+            </tr>
+            <tr th:each="pressOrder : ${pressOrders}">
+                <td th:text="${pressOrder.id}"><a href="/pressorder/${pressOrder.id}">Id</a></td>
+                <td th:text="${pressOrder.fruitAmount}">Fruit amount</td>
+                <!--<td th:text="${pressOrder.order.fruit.getName()}">Juice</td>-->
+                <td th:text="${pressOrder.maxJuiceAmount}">Max juice amount</td>
+                <td th:text="${pressOrder.status}">Status</td>
+                <td><a th:href="${'/pressorder/' + pressOrder.id}">View</a></td>
+                <td th:if="${role} == 'ROLE_PRESSER'"><a th:href="${'/pressorder/edit/' + pressOrder.id}">Edit</a></td>
+                <td th:if="${role} == 'ROLE_PRESSER'"><a th:href="${'/pressorder/delete/' + pressOrder.id}">Delete</a></td>
+                <td th:if="${role} == 'ROLE_PRESSER'"><a th:href="${'/schedule'}">plan</a></td>
+                <td th:if="${role} == 'ROLE_PRESSER'"><a th:href="'/pressorders/'+${pressOrder.id}+'/press'">Press</a> </td>
+            </tr>
+        </table>
+
+    </div>
+</div>
+
+</body>
+</html>

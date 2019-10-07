@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head lang="en">
+
+    <title>PIPO Appelsap</title>
+
+    <!--/*/ <th:block th:include="fragments/headerinc :: head"></th:block> /*/-->
+</head>
+<body>
+
+<div class="container">
+    <!--/*/ <th:block th:include="fragments/header :: header"></th:block> /*/-->
+
+    <div class="starter-template">
+        <div th:inline="text">Hello '[[${#httpServletRequest.remoteUser}]]',
+            choose your option.</div>
+    </div>
+
+</div>
+
+</body>
+</html>

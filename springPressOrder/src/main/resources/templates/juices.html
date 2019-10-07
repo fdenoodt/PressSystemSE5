@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>$Title$</title>
+</head>
+<body>
+
+<div class="container">
+    <!--/*/ <th:block th:include="fragments/header :: header"></th:block> /*/-->
+    <div th:if="${not #lists.isEmpty(listJuices)}">
+        <h2>Order List</h2>
+        <table class="table table-striped">
+            <tr>
+                <th>Id</th>
+                <th>Amount</th>
+                <th>Status</th>
+                <th>Date</th>
+                <th>Client id</th>
+            </tr>
+            <tr th:each="objOrder : ${listJuices}">
+
+            </tr>
+        </table>
+
+    </div>
+</div>
+
+</body>
+</html>

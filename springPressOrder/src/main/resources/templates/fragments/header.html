@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head lang="en">
+</head>
+<body>
+<div class="container">
+    <div th:fragment="header">
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="#" th:href="@{/}">Home</a>
+                    <ul class="nav navbar-nav">
+                        <li><a href="#" th:href="@{/pressorders}">Press orders</a></li>
+                        <li><a href="#" th:href="@{/pressorder/new}">Create press order</a></li>
+                        <li><a href="#" th:href="@{/orders}">Orders</a></li>
+                        <li><a href="#" th:href="@{/order/new}">Create order</a></li>
+                        <li><a href="#" th:href="@{/technician}">Technician overview</a></li>
+                        <li><a href="#" th:href="@{/machines}">Machines</a></li>
+                        <li><a href="#" th:href="@{/storage}">In Stock</a></li>
+                    </ul>
+                    <form method="POST" th:action="@{/logout}" style="float: right">
+                        <button class="btn btn-danger btn-md logout" name="logout" value="Logout">Logout</button>
+                    </form>
+
+                </div>
+            </div>
+        </nav>
+
+        <div class="jumbotron">
+            <div class="row text-center">
+                <div class="">
+                    <h2>PIPO Appelsap</h2>
+                    <h3>Spring Boot Web App</h3>
+                </div>
+            </div>
+            <div class="row text-center">
+                <img src="../../static/images/pipo.png" width="400"
+                     th:src="@{/images/pipo.png}"/>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

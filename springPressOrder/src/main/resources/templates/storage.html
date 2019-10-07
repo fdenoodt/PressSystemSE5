@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head lang="en">
+    <title>PIPO Appelsap</title>
+</head>
+<body>
+<div class="container">
+    <div th:if="${not #lists.isEmpty(listStorage)}">
+        <h2>Stock List</h2>
+        <table class="table table-striped">
+            <tr>
+                <th>Name</th>
+                <th>Amount</th>
+                <th>Price</th>
+            </tr>
+            <tr th:each="objStorage : ${listStorage}">
+                <td th:text="${objStorage.getFruit().getName()}"></td>
+                <td th:text="${objStorage.getTotal()}"></td>
+                <td th:text="${objStorage.getPrice()}"></td>
+                <td th:if="${role} !='ROLE_USER'"><a th:href="'/storage/predict/'+${objStorage.getId()}">Predict</a></td>
+            </tr>
+        </table>
+
+    </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head lang="en">
+
+    <title>PIPO Appelsap</title>
+
+    <!--/*/ <th:block th:include="fragments/headerinc :: head"></th:block> /*/-->
+</head>
+<body>
+<div class="container">
+    <!--/*/ <th:block th:include="fragments/header :: header"></th:block> /*/-->
+    <div th:if="${not #lists.isEmpty(Orders)}">
+        <h2>Order list</h2>
+        <table class="table table-striped">
+            <tr>
+                <th>Id</th>
+                <th>Amount</th>
+                <th>Fruit Juice</th>
+                <th>Status</th>
+            </tr>
+            <tr th:each="order : ${Orders}">
+                <td th:text="${order.id}"><a href="/order/${order.id}">Id</a></td>
+                <td th:text="${order.amount}">Fruit amount</td>
+                <td th:text="${order.juices}">Juice</td>
+                <div th:if="${not #lists.isEmpty(order.juices)}">
+                <td th:text="${order.juices.get(1).fruit.fruitname}">Juice</td>
+                </div>
+                <td th:text="${order.status}">Status</td>
+                <td><a th:href="${'/order/' + order.id}">View</a></td>
+                <td><a th:href="${'/order/edit/' + order.id}">Edit</a></td>
+                <td><a th:href="${'/order/delete/' + order.id}">Delete</a></td>
+            </tr>
+        </table>
+
+    </div>
+
+    <div th:if="${not #lists.isEmpty(PressOrders)}">
+        <h2>Press order list</h2>
+        <table class="table table-striped">
+            <tr>
+                <th>Id</th>
+                <th>Amount</th>
+                <th>Fruit Juice</th>
+                <th>Status</th>
+            </tr>
+            <tr th:each="pressorder : ${PressOrders}">
+                <td th:text="${pressorder.id}"><a href="/order/${order.id}">Id</a></td>
+                <td th:text="${pressorder.maxJuiceAmount}">Fruit amount</td>
+                <td th:text="${pressorder.juice}">Juice</td>
+                <td th:text="${pressorder.status}">Status</td>
+                <td><a th:href="${'/pressorder/' + pressorder.id}">View</a></td>
+                <td><a th:href="${'/pressorder/edit/' + pressorder.id}">Edit</a></td>
+                <td><a th:href="${'/pressorder/delete/' + pressorder.id}">Delete</a></td>
+            </tr>
+        </table>
+
+    </div>
+
+</div>
+
+</body>
+</html>

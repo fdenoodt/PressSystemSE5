@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head lang="en">
+
+    <title>Press order</title>
+
+    <!--/*/ <th:block th:include="fragments/headerinc :: head"></th:block> /*/-->
+</head>
+<body>
+<div class="container">
+    <!--/*/ <th:block th:include="fragments/header :: header"></th:block> /*/-->
+
+    <h2>Press order details</h2>
+        <div>
+            <form class="form-horizontal">
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">Id:</label>
+                    <div class="col-sm-10">
+                        <p class="form-control-static" th:text="${pressOrder.id}">Id</p></div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">Fruit amount:</label>
+                    <div class="col-sm-10">
+                        <p class="form-control-static" th:text="${pressOrder.fruitAmount}">Fruit amount</p>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">Juice:</label>
+                    <div class="col-sm-10">
+                       <!-- <p class="form-control-static" th:text="${pressOrder.order.fruit.getFruitname()}">Juice</p>-->
+                    </div>
+                </div>
+                <div>
+                    <label class="col-sm-2 control-label">Predicted amount of juice:</label>
+                    <div class="col-sm-10">
+                        <p class="form-control-static" th:text="${predictedAmountOfJuice}">Max juice amount</p>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">Max juice amount:</label>
+                    <div class="col-sm-10">
+                        <p class="form-control-static" th:text="${pressOrder.maxJuiceAmount}">Max juice amount</p>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">Status:</label>
+                    <div class="col-sm-10">
+                        <p class="form-control-static" th:text="${pressOrder.status}">Status</p>
+                    </div>
+                </div>
+            </form>
+    </div>
+</div>
+
+</body>
+</html>

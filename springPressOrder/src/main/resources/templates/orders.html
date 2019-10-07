@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head lang="en">
+    <title>PIPO Appelsap</title>
+    <!--/*/ <th:block th:include="fragments/headerinc :: head"></th:block> /*/-->
+</head>
+<body>
+<div class="container">
+    <!--/*/ <th:block th:include="fragments/header :: header"></th:block> /*/-->
+    <div th:if="${not #lists.isEmpty(listOrders)}">
+        <h2>Order List</h2>
+        <table class="table table-striped">
+            <tr>
+                <th>Id</th>
+                <th>Amount</th>
+                <th>Juice</th>
+                <th>Status</th>
+                <th>Date</th>
+                <th>Client id</th>
+            </tr>
+            <tr th:each="objOrder : ${listOrders}">
+                <td th:text="${objOrder.id}"><a href="/order/${order.id}">Id</a></td>
+                <td th:text="${objOrder.amount}">Amount</td>
+                <td th:text="${objOrder.fruit.getName()}">Fruit</td>
+                <td th:text="${objOrder.status}">Status</td>
+                <td th:text="${objOrder.orderDate}">Date</td>
+                <td th:text="${objOrder.getUser().getId()}">Client id</td>
+                <td><a th:href="${'/order/' + objOrder.id}">View</a></td>
+                <td><a th:href="${'/order/edit/' + objOrder.id}">Edit</a></td>
+                <td><a th:href="${'/order/delete/' + objOrder.id}">Delete</a></td>
+            </tr>
+        </table>
+
+    </div>
+</div>
+
+</body>
+</html>

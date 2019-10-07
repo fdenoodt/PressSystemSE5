@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <title>Request</title>
+</head>
+<body>
+<div class="container">
+    <div th:if="${not #lists.isEmpty(listRequests)}">
+        <h2>Schedule list</h2>
+        <table class="table table-striped">
+            <tr>
+                <th>Id</th>
+                <th>Date</th>
+                <th>Message</th>
+            </tr>
+            <tr th:each="objRequest : ${listRequests}">
+                <td th:text="${objRequest.getId()}"></td>
+                <td th:text="${objRequest.getRequest_time()}"></td>
+                <td th:text="${objRequest.getMessage()}"></td>
+            </tr>
+        </table>
+    </div>
+</div>
+</body>
+</html>
