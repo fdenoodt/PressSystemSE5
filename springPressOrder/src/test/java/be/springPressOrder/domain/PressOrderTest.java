@@ -68,5 +68,36 @@ public class PressOrderTest {
         assertThrows(IllegalArgumentException.class, () -> order.setFruit("appelsien"));
     }
 
+    @Test
+    public void setFruitAantalVoorFruitType() throws Exception {
+        assertThrows(IllegalArgumentException.class, () -> order.setFruitAmount(3));
+    }
+
+    @Test
+    public void fruitAmountKleinerDan3EnFruitAppel() throws Exception {
+        order.setFruit("appel");
+        assertThrows(IllegalArgumentException.class, () -> order.setFruitAmount(0));
+    }
+
+    @Test
+    public void fruitAmountGroterDan3ofGelijkEnFruitPeer() throws Exception {
+        order.setFruit("peer");
+        assertThrows(IllegalArgumentException.class, () -> order.setFruitAmount(3));
+    }
+
+    @Test
+    public void fruitAmountKleinerDan4EnFruitPeer() throws Exception {
+        order.setFruit("peer");
+        assertThrows(IllegalArgumentException.class, () -> order.setFruitAmount(0));
+    }
+
+    @Test
+    public void fruitAmountGroterDan4ofGelijkEnFruitAppel() throws Exception {
+        order.setFruit("appel");
+        order.setFruitAmount(4);
+        assertEquals(order.getMaxJuiceAmount(), Math.floor((4.0 / 2)));
+
+    }
+
 
 }

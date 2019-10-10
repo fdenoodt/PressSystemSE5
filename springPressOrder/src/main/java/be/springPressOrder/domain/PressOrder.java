@@ -16,7 +16,7 @@ public class PressOrder {
     private int fruitAmount;
     private int maxJuiceAmount;
     private Status status;
-    private String fruit;
+    private String fruit = "";
 
     @OneToOne(mappedBy = "pressOrder")
     private Order order;
@@ -44,6 +44,9 @@ public class PressOrder {
     }
 
     public void setFruitAmount(int fruitAmount) throws Exception {
+        if (!ifFruitExists(fruit))
+            throw new IllegalArgumentException("Een bestelling moet fruit bevatten, voordat je een aantal kan ingeven.");
+
         if (fruitAmount >= 3 && fruit.equals("appel")) {
             this.fruitAmount = fruitAmount;
             this.maxJuiceAmount = (fruitAmount / 2);
@@ -51,7 +54,7 @@ public class PressOrder {
             this.fruitAmount = fruitAmount;
             this.maxJuiceAmount = (fruitAmount / 3);
         } else
-            throw new IllegalArgumentException("Een bestelling moet minimum 3 appelen omvatten");
+            throw new IllegalArgumentException("Een bestelling moet minimum 3 appelen of 4 peren omvatten");
     }
 
     private void setMaxJuiceAmount(int maxJuiceAmount) {
@@ -94,8 +97,12 @@ public class PressOrder {
         return schedules;
     }
 
+    private boolean ifFruitExists(String fruit) {
+        return fruit.equals("appel") || fruit.equals("peer");
+    }
+
     public void setFruit(String fruit) {
-        if (fruit.equals("appel") || fruit.equals("peer"))
+        if (ifFruitExists(fruit))
             this.fruit = fruit;
         else
             throw new IllegalArgumentException("Een bestelling kan enkel fruit of peer kan bevatten.");
