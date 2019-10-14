@@ -22,8 +22,8 @@ public class BVAEnEPTest {
     }
     @Test
     public void testBVA() {
-        assertThrows(IllegalArgumentException.class,() -> juice.setAmount(3)); // BVA
-        assertThrows(IllegalArgumentException.class,() -> juice.setAmount(101)); // BVA
+        assertThrows(IllegalArgumentException.class,() -> juice.setAmount(3, 4, 100)); // BVA
+        assertThrows(IllegalArgumentException.class,() -> juice.setAmount(101, 4, 100)); // BVA
     }
 
     @Test
