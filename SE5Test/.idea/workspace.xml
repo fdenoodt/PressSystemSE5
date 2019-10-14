@@ -2,11 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="de32598e-0b46-40df-a79e-6960c3c1ac30" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../springPressOrder/src/test/java/be/springPressOrder/domain/BVAenEPTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../springPressOrder/src/test/java/be/springPressOrder/domain/MachineStatusSimulator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../springPressOrder/src/test/java/be/springPressOrder/domain/MachineStatusTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../springPressOrder/src/main/java/be/springPressOrder/domain/Juice.java" beforeDir="false" afterPath="$PROJECT_DIR$/../springPressOrder/src/main/java/be/springPressOrder/domain/Juice.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../springPressOrder/src/main/java/be/springPressOrder/services/PressSystemService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../springPressOrder/src/main/java/be/springPressOrder/services/PressSystemService.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -63,7 +61,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.BVAenEPTest">
+  <component name="RunManager" selected="JUnit.MachineStatusTest">
     <configuration name="BVAenEPTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="spring-boot-web" />
       <extension name="coverage">
@@ -79,6 +77,21 @@
       <option name="METHOD_NAME" value="" />
       <option name="TEST_OBJECT" value="class" />
       <option name="PARAMETERS" value="" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MachineStatusTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="spring-boot-web" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="be.springPressOrder.domain.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="be.springPressOrder.domain" />
+      <option name="MAIN_CLASS_NAME" value="be.springPressOrder.domain.MachineStatusTest" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -142,9 +155,11 @@
     <list>
       <item itemvalue="JUnit.BVAenEPTest" />
       <item itemvalue="Spring Boot.SpringBootWebApplication" />
+      <item itemvalue="JUnit.MachineStatusTest" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.MachineStatusTest" />
         <item itemvalue="JUnit.BVAenEPTest" />
       </list>
     </recent_temporary>
@@ -162,7 +177,8 @@
       <workItem from="1570439900247" duration="2297000" />
       <workItem from="1570443029293" duration="611000" />
       <workItem from="1570628292691" duration="223000" />
-      <workItem from="1570628541531" duration="819000" />
+      <workItem from="1570628541531" duration="2498000" />
+      <workItem from="1571044305360" duration="11015000" />
     </task>
     <servers />
   </component>
