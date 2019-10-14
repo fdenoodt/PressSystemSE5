@@ -21,13 +21,9 @@ public class Juice {
     @DateTimeFormat(pattern = "yyyy-MM-dd' 'HH:mm")
     private Date pressDate;
     private int fromClient;
-<<<<<<< Updated upstream
-    private int maxAmount;
-    private int minAmount;
-=======
+
     private int maxAmount = 3;
     private int minAmount = 50;
->>>>>>> Stashed changes
 
     @ManyToOne
     @JoinColumn(name = "order_id", nullable = true)
@@ -47,16 +43,7 @@ public class Juice {
         if(amount > maxAmount) throw new IllegalArgumentException("Amount mag niet groter zijn dan MaxAmount");
         if(minAmount > amount) throw new IllegalArgumentException("Amount moet groter zijn dan minAmount");
     }
-    public Juice(Fruit fruit, int amount, Date presdate, int fromClient, int maxAmount, int minAmount) throws Exception {
-        this.fruit = fruit;
-        this.maxAmount = maxAmount;
-        this.minAmount = minAmount;
-        this.amount = amount;
-        this.pressDate = presdate;
-        this.fromClient = fromClient;
-        if(amount > maxAmount) throw new IllegalArgumentException("Amount mag niet groter zijn dan MaxAmount");
-        if(minAmount > amount) throw new IllegalArgumentException("Amount moet groter zijn dan minAmount");
-    }
+
 
 
     public Juice(){

@@ -86,9 +86,9 @@ public class SpringBootWebAppDB implements ApplicationListener<ContextRefreshedE
         fruitRepository.save(fruit);
 
         Storage storage = new Storage(fruit,3.0);
-        Juice juice1 = new Juice(fruit,50,new Date(),1);
-        juiceRepository.save(juice1);
-        storage.addJuice(juice1);
+//        Juice juice1 = new Juice(fruit,50,new Date(),1);
+//        juiceRepository.save(juice1);
+//        storage.addJuice(juice1);
         storageRepository.save(storage);
 
 

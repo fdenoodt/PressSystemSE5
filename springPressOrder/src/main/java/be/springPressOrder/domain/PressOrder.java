@@ -14,10 +14,8 @@ public class PressOrder {
     private int fruitAmount;
     private int maxJuiceAmount;
     private Status status;
-<<<<<<< HEAD
-=======
+
     private String fruit;
->>>>>>> parent of d7bbff5... more tests to cover coverage
 
     @OneToOne(mappedBy = "pressOrder")
     private Order order;
@@ -32,21 +30,19 @@ public class PressOrder {
         this.order = order;
         schedules = new HashSet<>();
     }
-    public PressOrder(int fruitAmount, int maxJuiceAmount){
+
+    public PressOrder(int fruitAmount, int maxJuiceAmount) {
         this.fruitAmount = fruitAmount;
         this.maxJuiceAmount = maxJuiceAmount;
         this.status = Status.NOT_PLANNED;
         schedules = new HashSet<>();
     }
 
-    public PressOrder(){
+    public PressOrder() {
         schedules = new HashSet<>();
     }
 
-<<<<<<< HEAD
-    public void setFruitAmount(int fruitAmount) {
-        this.fruitAmount = fruitAmount;
-=======
+
     public void setFruitAmount(int fruitAmount) throws Exception {
         if (fruitAmount >= 3 && fruit.equals("appel")) {
             this.fruitAmount = fruitAmount;
@@ -56,7 +52,7 @@ public class PressOrder {
             this.maxJuiceAmount = (fruitAmount / 3);
         } else
             throw new IllegalArgumentException("Een bestelling moet minimum 3 appelen omvatten");
->>>>>>> parent of d7bbff5... more tests to cover coverage
+
     }
 
     public void setMaxJuiceAmount(int maxJuiceAmount) {
@@ -98,8 +94,7 @@ public class PressOrder {
     public Set<Schedule> getSchedules() {
         return schedules;
     }
-<<<<<<< HEAD
-=======
+
 
     public void setFruit(String fruit) {
         if (fruit.equals("appel") || fruit.equals("peer"))
@@ -111,5 +106,5 @@ public class PressOrder {
     public String getFruit() {
         return this.fruit;
     }
->>>>>>> parent of d7bbff5... more tests to cover coverage
+
 }
