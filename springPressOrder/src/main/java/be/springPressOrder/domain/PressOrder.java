@@ -100,7 +100,8 @@ public class PressOrder {
         if (fruit.equals("appel") || fruit.equals("peer"))
             this.fruit = fruit;
         else
-            throw new IllegalArgumentException("Een bestelling kan enkel fruit of peer kan bevatten.");
+            throw new IllegalArgumentException(
+                    "Een bestelling kan enkel fruit of peer kan bevatten.");
     }
 
     public String getFruit() {
