@@ -1,7 +1,5 @@
 package be.springPressOrder.domain;
 
-import org.omg.CORBA.PUBLIC_MEMBER;
-
 import javax.persistence.*;
 import java.util.HashSet;
 import java.util.Set;
@@ -16,7 +14,6 @@ public class PressOrder {
     private int fruitAmount;
     private int maxJuiceAmount;
     private Status status;
-    private String fruit = "";
 
     @OneToOne(mappedBy = "pressOrder")
     private Order order;
@@ -24,40 +21,29 @@ public class PressOrder {
     @OneToMany(mappedBy = "pressOrder")
     private Set<Schedule> schedules;
 
-    public PressOrder(int fruitAmount, int maxJuiceAmount, Order order) {
+    public PressOrder(int fruitAmount, int maxJuiceAmount, Order order){
         this.fruitAmount = fruitAmount;
         this.maxJuiceAmount = maxJuiceAmount;
         this.status = Status.NOT_PLANNED;
         this.order = order;
         schedules = new HashSet<>();
     }
-
-    public PressOrder(int fruitAmount, int maxJuiceAmount) {
+    public PressOrder(int fruitAmount, int maxJuiceAmount){
         this.fruitAmount = fruitAmount;
         this.maxJuiceAmount = maxJuiceAmount;
         this.status = Status.NOT_PLANNED;
         schedules = new HashSet<>();
     }
 
-    public PressOrder() {
+    public PressOrder(){
         schedules = new HashSet<>();
     }
 
-    public void setFruitAmount(int fruitAmount) throws Exception {
-        if (!ifFruitExists(fruit))
-            throw new IllegalArgumentException("Een bestelling moet fruit bevatten, voordat je een aantal kan ingeven.");
-
-        if (fruitAmount >= 3 && fruit.equals("appel")) {
-            this.fruitAmount = fruitAmount;
-            this.maxJuiceAmount = (fruitAmount / 2);
-        } else if (fruitAmount >= 4 && fruit.equals("peer")) {
-            this.fruitAmount = fruitAmount;
-            this.maxJuiceAmount = (fruitAmount / 3);
-        } else
-            throw new IllegalArgumentException("Een bestelling moet minimum 3 appelen of 4 peren omvatten");
+    public void setFruitAmount(int fruitAmount) {
+        this.fruitAmount = fruitAmount;
     }
 
-    private void setMaxJuiceAmount(int maxJuiceAmount) {
+    public void setMaxJuiceAmount(int maxJuiceAmount) {
         this.maxJuiceAmount = maxJuiceAmount;
     }
 
@@ -95,20 +81,5 @@ public class PressOrder {
 
     public Set<Schedule> getSchedules() {
         return schedules;
-    }
-
-    private boolean ifFruitExists(String fruit) {
-        return fruit.equals("appel") || fruit.equals("peer");
-    }
-
-    public void setFruit(String fruit) {
-        if (ifFruitExists(fruit))
-            this.fruit = fruit;
-        else
-            throw new IllegalArgumentException("Een bestelling kan enkel fruit of peer kan bevatten.");
-    }
-
-    public String getFruit() {
-        return this.fruit;
     }
 }
