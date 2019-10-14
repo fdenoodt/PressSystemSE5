@@ -23,7 +23,7 @@ public class PressOrder {
     @OneToMany(mappedBy = "pressOrder")
     private Set<Schedule> schedules;
 
-    public PressOrder(int fruitAmount, int maxJuiceAmount, Order order){
+    public PressOrder(int fruitAmount, int maxJuiceAmount, Order order) {
         this.fruitAmount = fruitAmount;
         this.maxJuiceAmount = maxJuiceAmount;
         this.status = Status.NOT_PLANNED;
