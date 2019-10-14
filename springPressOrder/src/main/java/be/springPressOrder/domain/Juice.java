@@ -101,4 +101,28 @@ public class Juice {
     public void setOrder(Order order) {
         this.order = order;
     }
+
+    // test klasses
+    private int MinAmount = 5;
+    private int MaxAmount = 100;
+
+    public Juice(Fruit fruit, int amount, Date presdate, int fromClient, int maxAmount, int minAmount) throws Exception {
+        this.fruit = fruit;
+        this.MaxAmount = maxAmount;
+        this.MinAmount = minAmount;
+        this.amount = amount;
+        this.pressDate = presdate;
+        this.fromClient = fromClient;
+        if(amount > maxAmount) throw new IllegalArgumentException("Amount mag niet groter zijn dan MaxAmount");
+        if(minAmount > amount) throw new IllegalArgumentException("Amount moet groter zijn dan minAmount");
+    }
+
+    public void setAmount(int amount, int minAmount, int maxAmount) throws Exception {
+        if(amount <= maxAmount && amount > minAmount) {
+            this.amount = amount;}
+        else throw new IllegalArgumentException("Amount moet voldoen aan min en max");
+    }
+
+
+
 }

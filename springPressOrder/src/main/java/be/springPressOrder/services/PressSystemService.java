@@ -5,12 +5,8 @@ import be.springPressOrder.Data.PressOrderData;
 import be.springPressOrder.Data.RequestTechnicianData;
 import be.springPressOrder.Data.ScheduleData;
 import be.springPressOrder.domain.*;
-import com.google.common.reflect.ImmutableTypeToInstanceMap;
-import org.springframework.security.core.userdetails.UserDetails;
 
-import javax.jnlp.IntegrationService;
 import java.text.ParseException;
-import java.util.ArrayList;
 import java.util.List;
 
 //Hier worden de methodes aangemaakt. Maar deze zijn leeg, de body komt in de implementatie
