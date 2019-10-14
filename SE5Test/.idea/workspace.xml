@@ -2,11 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="de32598e-0b46-40df-a79e-6960c3c1ac30" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../springPressOrder/src/test/java/be/springPressOrder/domain/BVAenEPTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../springPressOrder/src/main/java/be/springPressOrder/domain/Juice.java" beforeDir="false" afterPath="$PROJECT_DIR$/../springPressOrder/src/main/java/be/springPressOrder/domain/Juice.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../springPressOrder/src/main/java/be/springPressOrder/services/PressSystemService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../springPressOrder/src/main/java/be/springPressOrder/services/PressSystemService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../springPressOrder/src/test/java/be/springPressOrder/BVAenEPTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../springPressOrder/src/test/java/be/springPressOrder/domain/BVAEnEPTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../springPressOrder/src/test/java/be/springPressOrder/domain/BVAEnEPTest.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -65,6 +64,21 @@
     </option>
   </component>
   <component name="RunManager" selected="JUnit.BVAenEPTest">
+    <configuration name="BVAenEPTest (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="spring-boot-web" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="be.springPressOrder.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="be.springPressOrder" />
+      <option name="MAIN_CLASS_NAME" value="be.springPressOrder.BVAenEPTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="BVAenEPTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="spring-boot-web" />
       <extension name="coverage">
@@ -74,25 +88,12 @@
         </pattern>
       </extension>
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
-      <option name="ALTERNATIVE_JRE_PATH" value="11" />
+      <option name="ALTERNATIVE_JRE_PATH" value="1.8" />
       <option name="PACKAGE_NAME" value="be.springPressOrder.domain" />
       <option name="MAIN_CLASS_NAME" value="be.springPressOrder.domain.BVAenEPTest" />
       <option name="METHOD_NAME" value="" />
       <option name="TEST_OBJECT" value="class" />
       <option name="PARAMETERS" value="" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="JetRunConfigurationType" factoryName="Kotlin">
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="WORKING_DIRECTORY" />
-      <module name="" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -112,6 +113,19 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration default="true" type="JetRunConfigurationType" factoryName="Kotlin">
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="WORKING_DIRECTORY" />
+      <module name="" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="SpringBootWebApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="spring-boot-web" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="be.springPressOrder.SpringBootWebApplication" />
@@ -122,12 +136,15 @@
       </method>
     </configuration>
     <list>
+      <item itemvalue="JUnit.PressOrderTest" />
       <item itemvalue="JUnit.BVAenEPTest" />
+      <item itemvalue="JUnit.BVAenEPTest (1)" />
       <item itemvalue="Spring Boot.SpringBootWebApplication" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.BVAenEPTest" />
+        <item itemvalue="JUnit.BVAenEPTest (1)" />
       </list>
     </recent_temporary>
   </component>
@@ -145,6 +162,7 @@
       <workItem from="1570443029293" duration="611000" />
       <workItem from="1570628292691" duration="223000" />
       <workItem from="1570628541531" duration="819000" />
+      <workItem from="1571047390366" duration="736000" />
     </task>
     <servers />
   </component>

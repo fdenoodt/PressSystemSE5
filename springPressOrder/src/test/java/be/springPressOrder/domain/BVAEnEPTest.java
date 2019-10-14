@@ -7,8 +7,7 @@ import java.util.Date;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-public class BVAEnEPTest {
-
+public class BVAenEPTest {
     public static Juice juice;
     @BeforeAll
     public static void init() {
@@ -22,8 +21,8 @@ public class BVAEnEPTest {
     }
     @Test
     public void testBVA() {
-        assertThrows(IllegalArgumentException.class,() -> juice.setAmount(3)); // BVA
-        assertThrows(IllegalArgumentException.class,() -> juice.setAmount(101)); // BVA
+        assertThrows(IllegalArgumentException.class,() -> juice.setAmount(3, 5, 100)); // BVA
+        assertThrows(IllegalArgumentException.class,() -> juice.setAmount(101, 5, 100)); // BVA
     }
 
     @Test
@@ -35,6 +34,5 @@ public class BVAEnEPTest {
             System.out.println((e));
         }
     }
-
 
 }
