@@ -4,7 +4,6 @@
     <list default="true" id="de32598e-0b46-40df-a79e-6960c3c1ac30" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../springPressOrder/src/main/java/be/springPressOrder/domain/Juice.java" beforeDir="false" afterPath="$PROJECT_DIR$/../springPressOrder/src/main/java/be/springPressOrder/domain/Juice.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../springPressOrder/src/test/java/be/springPressOrder/domain/BVAenEPTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../springPressOrder/src/test/java/be/springPressOrder/domain/BVAenEPTest.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -138,8 +137,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.BVAEnEPTest" />
         <item itemvalue="JUnit.MachineStatusTest" />
+        <item itemvalue="JUnit.BVAEnEPTest" />
       </list>
     </recent_temporary>
   </component>
@@ -158,7 +157,7 @@
       <workItem from="1570628292691" duration="223000" />
       <workItem from="1570628541531" duration="2498000" />
       <workItem from="1571044305360" duration="11015000" />
-      <workItem from="1571095084247" duration="151000" />
+      <workItem from="1571095084247" duration="1942000" />
     </task>
     <servers />
   </component>

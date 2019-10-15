@@ -21,8 +21,6 @@ public class Juice {
     @DateTimeFormat(pattern = "yyyy-MM-dd' 'HH:mm")
     private Date pressDate;
     private int fromClient;
-    private int maxAmount = 3;
-    private int minAmount = 50;
 
     @ManyToOne
     @JoinColumn(name = "order_id", nullable = true)
@@ -64,7 +62,7 @@ public class Juice {
     }
 
     public void setAmount(int amount) throws Exception {
-        if(amount <= maxAmount && amount > minAmount) {
+        if(amount <= MaxAmount && amount > MinAmount) {
             this.amount = amount;}
         else throw new IllegalArgumentException("Amount moet voldoen aan min en max");
     }
