@@ -14,11 +14,11 @@ public class Machine {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
 
-    public Integer getId(){
+    public Integer getId() {
         return id;
     }
 
-    public enum Status {Ok,Not_OK}
+    public enum Status {Ok, Not_OK}
 
     public Status getStatus() {
         return status;
@@ -30,6 +30,10 @@ public class Machine {
 
     public void setStatus(Status status) {
         this.status = status;
+    }
+
+    public void changeStatus() {
+        status = status == Status.Ok ? Status.Not_OK : Status.Ok;
     }
 
     private Status status;
@@ -51,10 +55,13 @@ public class Machine {
         status = Status.Ok;
     }
 
-    public Machine(){
+    public Machine() {
         reportList = new HashSet<>();
         schedules = new HashSet<>();
+
+        changeStatus();
     }
+
 
     public boolean isOccupied() {
         return isOccupied;
@@ -76,11 +83,12 @@ public class Machine {
         return reportList;
     }
 
-    public void addRapport(Rapport rapport){
+    public void addRapport(Rapport rapport) {
         reportList.add(rapport);
     }
 
-    public Set<Schedule> getSchedules(){
+    public Set<Schedule> getSchedules() {
         return schedules;
     }
+
 }
