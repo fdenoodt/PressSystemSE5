@@ -63,7 +63,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.DttMockitoTest">
+  <component name="RunManager" selected="JUnit.MockitoTest">
     <configuration name="BVAEnEPTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="spring-boot-web" />
       <extension name="coverage">
@@ -124,7 +124,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="PressOrderTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="MockitoTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="spring-boot-web" />
       <extension name="coverage">
         <pattern>
@@ -133,7 +133,7 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="be.springPressOrder.domain" />
-      <option name="MAIN_CLASS_NAME" value="be.springPressOrder.domain.PressOrderTest" />
+      <option name="MAIN_CLASS_NAME" value="be.springPressOrder.domain.MockitoTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -162,15 +162,16 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="JUnit.PressOrderTest" />
       <item itemvalue="JUnit.MachineStatusTest" />
       <item itemvalue="JUnit.BVAEnEPTest" />
       <item itemvalue="JUnit.DttQuantityJuice" />
       <item itemvalue="JUnit.DttMockitoTest" />
       <item itemvalue="Spring Boot.SpringBootWebApplication" />
+      <item itemvalue="JUnit.MockitoTest" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.MockitoTest" />
         <item itemvalue="JUnit.DttMockitoTest" />
         <item itemvalue="JUnit.DttQuantityJuice" />
         <item itemvalue="JUnit.MachineStatusTest" />
@@ -196,7 +197,7 @@
       <workItem from="1571095084247" duration="3639000" />
       <workItem from="1571211577411" duration="316000" />
       <workItem from="1571211932338" duration="8861000" />
-      <workItem from="1571309361547" duration="3852000" />
+      <workItem from="1571309361547" duration="5728000" />
     </task>
     <servers />
   </component>

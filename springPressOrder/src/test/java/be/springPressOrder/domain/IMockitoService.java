@@ -1,6 +1,8 @@
 package be.springPressOrder.domain;
 
 public interface IMockitoService {
-    public String checkquantityFruit(int quantityFruit);
-    public Fruit checkFruit(Fruit fruit);
+    public String checkMinquantityFruit(int quantityFruit);
+    public String checkMaxquantityFruit(int quantityFruit);
+    public boolean checkValidRangeQuantity(int quantityFruit);
+    public String checkFruit(Fruit fruit);
 }
