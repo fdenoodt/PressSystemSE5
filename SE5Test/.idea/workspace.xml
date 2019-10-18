@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="de32598e-0b46-40df-a79e-6960c3c1ac30" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../springPressOrder/src/test/java/be/springPressOrder/domain/IMockitoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../springPressOrder/src/test/java/be/springPressOrder/domain/IMockitoService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../springPressOrder/src/test/java/be/springPressOrder/domain/MockitoTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../springPressOrder/src/test/java/be/springPressOrder/domain/MockitoTest.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -197,7 +196,7 @@
       <workItem from="1571095084247" duration="3639000" />
       <workItem from="1571211577411" duration="316000" />
       <workItem from="1571211932338" duration="8861000" />
-      <workItem from="1571309361547" duration="5728000" />
+      <workItem from="1571309361547" duration="7512000" />
     </task>
     <servers />
   </component>

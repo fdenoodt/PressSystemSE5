@@ -29,15 +29,15 @@ public class MockitoTest {
     }
 
     public static int validMaxQuantity() {
-        return eq(100);
+        return lt(100);
     }
 
     public static int validMinQuantity() {
-        return eq(0);
+        return gt(0);
     }
 
     public static Fruit validFruit() {
-        Fruit fruit = new Fruit("peer");
+        Fruit fruit = new Fruit("appel");
         return fruit;
     }
 
@@ -62,8 +62,36 @@ public class MockitoTest {
 
 
     @Test
-    void test1 () {
+    public void test1 () {
+        assertEquals("Geen getal onder de 0", iMockitoService.checkMinquantityFruit(-10));
+    }
+
+    @Test
+    public void test2 () {
         Fruit fruit = new Fruit("appel");
-        assertEquals("Geen correct fruit", iMockitoService.checkFruit(fruit));
+        assertEquals("Bestelling wordt geplaatst", iMockitoService.checkFruit(fruit));
+        assertEquals("Goede min waarde", iMockitoService.checkMinquantityFruit(10));
+        assertEquals("Goede max waarde", iMockitoService.checkMaxquantityFruit(20));
+    }
+    @Test
+    public void test3 () {
+        Fruit fruit = new Fruit("none");
+        assertEquals("Type fruitsap moet gekozen zijn", iMockitoService.checkFruit(fruit));
+        assertEquals("Goede min waarde", iMockitoService.checkMinquantityFruit(10));
+        assertEquals("Goede max waarde", iMockitoService.checkMaxquantityFruit(20));
+    }
+    @Test
+    public void test4 () {
+        Fruit fruit = new Fruit("appel");
+        assertEquals("Bestelling wordt geplaatst", iMockitoService.checkFruit(fruit));
+        assertEquals("Goede min waarde", iMockitoService.checkMinquantityFruit(10));
+        assertEquals("Geen getal onder de 0", iMockitoService.checkMinquantityFruit(-20));
+    }
+    @Test
+    public void test5 () {
+        Fruit fruit = new Fruit("none");
+        assertEquals("Type fruitsap moet gekozen zijn", iMockitoService.checkFruit(fruit));
+        assertEquals("Goede min waarde", iMockitoService.checkMinquantityFruit(10));
+        assertEquals("Geen getal onder de 0", iMockitoService.checkMinquantityFruit(-20));
     }
 }
