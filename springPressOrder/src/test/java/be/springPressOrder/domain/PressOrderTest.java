@@ -70,7 +70,7 @@ public class PressOrderTest {
     }
 
     @Test
-    public  void processValidation() throws  Exception {
+    public void processValidation() throws Exception {
         assertThrows(IllegalArgumentException.class, () -> order.setFruit("appelsien"));
 
         order.setFruit("peer");
@@ -78,5 +78,35 @@ public class PressOrderTest {
         assertEquals(order.getMaxJuiceAmount(), Math.floor((4.0 / 3)));
     }
 
+    @Test
+    public void processValidation1() throws Exception {
+        assertThrows(IllegalArgumentException.class, () -> order.setFruit("appelsien"));
+    }
+
+    @Test
+    public void processValidation2() throws Exception {
+        order.setFruit("appel");
+        order.setFruitAmount(3);
+        assertEquals(order.getMaxJuiceAmount(), Math.floor((3.0 / 2)));
+    }
+
+    @Test
+    public void processValidation3() throws Exception {
+        order.setFruit("appel");
+        assertThrows(IllegalArgumentException.class, () -> order.setFruitAmount(2));
+    }
+
+    @Test
+    public void processValidation4() throws Exception {
+        order.setFruit("peer");
+        order.setFruitAmount(4);
+        assertEquals(order.getMaxJuiceAmount(), Math.floor((3.0 / 2)));
+    }
+
+    @Test
+    public void processValidation5() throws Exception {
+        order.setFruit("peer");
+        assertThrows(IllegalArgumentException.class, () -> order.setFruitAmount(2));
+    }
 
 }
