@@ -7,6 +7,7 @@ import java.util.LinkedList;
 import java.util.List;
 
 import org.junit.Test;
+import org.junit.Before;
 import org.junit.jupiter.api.BeforeEach;
 import org.mockito.Mock;
 import org.mockito.Mockito;
@@ -41,8 +42,8 @@ public class MockitoTest {
         return fruit;
     }
 
-    @BeforeEach
-    void setUp() {
+    @Before
+    public void setUp() {
         initMocks(this);
 
         Mockito.when(iMockitoService.checkValidRangeQuantity(validQuantityRange()))

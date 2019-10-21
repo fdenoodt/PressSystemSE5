@@ -3,6 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="de32598e-0b46-40df-a79e-6960c3c1ac30" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../springPressOrder/src/main/java/be/springPressOrder/domain/Juice.java" beforeDir="false" afterPath="$PROJECT_DIR$/../springPressOrder/src/main/java/be/springPressOrder/domain/Juice.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../springPressOrder/src/test/java/be/springPressOrder/domain/BVAEnEPTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../springPressOrder/src/test/java/be/springPressOrder/domain/BVAEnEPTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../springPressOrder/src/test/java/be/springPressOrder/domain/MachineStatusTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../springPressOrder/src/test/java/be/springPressOrder/domain/MachineStatusTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../springPressOrder/src/test/java/be/springPressOrder/domain/MockitoTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../springPressOrder/src/test/java/be/springPressOrder/domain/MockitoTest.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -62,7 +65,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.MockitoTest">
+  <component name="RunManager" selected="JUnit.MachineStatusTest">
     <configuration name="BVAEnEPTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="spring-boot-web" />
       <extension name="coverage">
@@ -165,16 +168,16 @@
       <item itemvalue="JUnit.BVAEnEPTest" />
       <item itemvalue="JUnit.DttQuantityJuice" />
       <item itemvalue="JUnit.DttMockitoTest" />
-      <item itemvalue="Spring Boot.SpringBootWebApplication" />
       <item itemvalue="JUnit.MockitoTest" />
+      <item itemvalue="Spring Boot.SpringBootWebApplication" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.MachineStatusTest" />
+        <item itemvalue="JUnit.BVAEnEPTest" />
         <item itemvalue="JUnit.MockitoTest" />
         <item itemvalue="JUnit.DttMockitoTest" />
         <item itemvalue="JUnit.DttQuantityJuice" />
-        <item itemvalue="JUnit.MachineStatusTest" />
-        <item itemvalue="JUnit.BVAEnEPTest" />
       </list>
     </recent_temporary>
   </component>
@@ -197,6 +200,9 @@
       <workItem from="1571211577411" duration="316000" />
       <workItem from="1571211932338" duration="8861000" />
       <workItem from="1571309361547" duration="7512000" />
+      <workItem from="1571405391960" duration="2260000" />
+      <workItem from="1571489635897" duration="5444000" />
+      <workItem from="1571641657304" duration="1820000" />
     </task>
     <servers />
   </component>

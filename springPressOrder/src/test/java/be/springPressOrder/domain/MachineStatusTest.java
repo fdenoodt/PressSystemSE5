@@ -18,9 +18,6 @@ public class MachineStatusTest {
     @Test
     public void HoofdScenario(){
         assertEquals(Machine.Status.Ok, machineStatusSimulator.Getstatus());
-        machineStatusSimulator.Setstatus(Machine.Status.Not_OK);
-        assertEquals(Machine.Status.Not_OK, machineStatusSimulator.Getstatus());
-        machineStatusSimulator.Setstatus(Machine.Status.Ok);
-        assertEquals(Machine.Status.Ok, machineStatusSimulator.Getstatus());
+        assertEquals("successfully saved", machineStatusSimulator.Setstatus(Machine.Status.Not_OK));
     }
 }

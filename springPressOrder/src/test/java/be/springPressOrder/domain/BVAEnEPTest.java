@@ -21,20 +21,69 @@ public class BVAEnEPTest {
         }
     }
     @Test
-    public void testBVA() {
-        assertThrows(IllegalArgumentException.class,() -> juice.setAmount(3, 4, 100)); // BVA
-        assertThrows(IllegalArgumentException.class,() -> juice.setAmount(101, 4, 100)); // BVA
+    public void testBVA1() {
+        assertThrows(IllegalArgumentException.class,() -> juice.setAmount(4, 5, 100));
+    }
+    @Test
+    public void testBVA2() {
+        try {
+            juice.setAmount(5, 5, 100);
+            assertEquals(5, juice.getAmount());
+            juice.setAmount(50, 5, 100);
+            assertEquals(50, juice.getAmount());
+        } catch (Exception e){
+            System.out.println((e));
+        }
+    }
+    @Test
+    public void testBVA3() {
+        try {
+            juice.setAmount(51, 5, 100);
+            assertEquals(52, juice.getAmount());
+            juice.setAmount(100, 5, 100);
+            assertEquals(101, juice.getAmount());
+        } catch (Exception e){
+            System.out.println((e));
+        }
+    }
+    @Test
+    public void testBVA4() {
+        assertThrows(IllegalArgumentException.class,() -> juice.setAmount(101, 5, 100));
     }
 
     @Test
-    public void  testEP() {
+    public void  testEP1() {
         try {
-            juice.setAmount(50);
-            assertEquals(50, juice.getAmount()); // EP
+            assertThrows(IllegalArgumentException.class,() -> juice.setAmount(-10, 5, 100));
         }  catch (Exception e) {
             System.out.println((e));
         }
     }
-
+    @Test
+    public void  testEP2() {
+        try {
+            juice.setAmount(20, 5, 100);
+            assertEquals(20, juice.getAmount());
+        }  catch (Exception e) {
+            System.out.println((e));
+        }
+    }
+    @Test
+    public void  testEP3() {
+        try {
+            juice.setAmount(65, 5, 100);
+            assertEquals(66, juice.getAmount());
+        }  catch (Exception e) {
+            System.out.println((e));
+        }
+    }
+    @Test
+    public void  testEP4() {
+        try {
+            assertThrows(IllegalArgumentException.class,() -> juice.setAmount(130, 5, 100));
+        }  catch (Exception e) {
+            System.out.println((e));
+        }
+    }
 
 }
