@@ -17,11 +17,13 @@ public class Juice {
 
    @OneToOne
     private Fruit fruit;
-
     private int amount;
     @DateTimeFormat(pattern = "yyyy-MM-dd' 'HH:mm")
     private Date pressDate;
     private int fromClient;
+
+    private int maxAmount = 3;
+    private int minAmount = 50;
 
     @ManyToOne
     @JoinColumn(name = "order_id", nullable = true)
@@ -31,12 +33,18 @@ public class Juice {
     @JoinColumn(name = "storage_id", nullable = true)
     private Storage storage;
 
-    public Juice(Fruit fruit, int amount, Date presdate, int fromClient) {
+    public Juice(Fruit fruit, int amount, Date presdate, int fromClient, int maxAmount, int minAmount) throws Exception {
         this.fruit = fruit;
+        this.maxAmount = maxAmount;
+        this.minAmount = minAmount;
         this.amount = amount;
         this.pressDate = presdate;
         this.fromClient = fromClient;
+        if(amount > maxAmount) throw new IllegalArgumentException("Amount mag niet groter zijn dan MaxAmount");
+        if(minAmount > amount) throw new IllegalArgumentException("Amount moet groter zijn dan minAmount");
     }
+
+
 
     public Juice(){
 
@@ -62,9 +70,12 @@ public class Juice {
         return fromClient;
     }
 
-    public void setAmount(int amount) {
-        this.amount = amount;
+    public void setAmount(int amount) throws Exception {
+        if(amount <= maxAmount && amount > minAmount) {
+            this.amount = amount;}
+        else throw new IllegalArgumentException("Amount moet voldoen aan min en max");
     }
+
 
     public void setPressDate(Date presdate) {
         this.pressDate = presdate;

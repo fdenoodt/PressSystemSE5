@@ -363,24 +363,27 @@ public class PressSystemServiceImpl implements PressSystemService {
     }
 
     public void pressPressOrder(int pressOrderId){
-        PressOrder po = getPressOrderById(pressOrderId);
-        FruitData fruitData = fruitDataRepository.findByFruit(po.getOrder().getFruit());
-        po.setStatus(Status.READY);
-        int amountOfJuiceTotal = (int)Math.round(po.getFruitAmount()*fruitData.getAvgJuiceAmount());
-        Juice juiceForClient = new Juice();
-        if(amountOfJuiceTotal > po.getMaxJuiceAmount()) {
-            juiceForClient.setAmount(po.getMaxJuiceAmount());
-            Juice restJuice = new Juice();
-            restJuice.setAmount(amountOfJuiceTotal - po.getMaxJuiceAmount());
-            Storage storage = storageRepository.findStorageByFruit(po.getOrder().getFruit());
-            storage.addJuice(restJuice);
-            storageRepository.save(storage);
+        try {
+            PressOrder po = getPressOrderById(pressOrderId);
+            FruitData fruitData = fruitDataRepository.findByFruit(po.getOrder().getFruit());
+            po.setStatus(Status.READY);
+            int amountOfJuiceTotal = (int) Math.round(po.getFruitAmount() * fruitData.getAvgJuiceAmount());
+            Juice juiceForClient = new Juice();
+            if (amountOfJuiceTotal > po.getMaxJuiceAmount()) {
+                juiceForClient.setAmount(po.getMaxJuiceAmount());
+                Juice restJuice = new Juice();
+                restJuice.setAmount(amountOfJuiceTotal - po.getMaxJuiceAmount());
+                Storage storage = storageRepository.findStorageByFruit(po.getOrder().getFruit());
+                storage.addJuice(restJuice);
+                storageRepository.save(storage);
+            } else
+                juiceForClient.setAmount(po.getMaxJuiceAmount());
+            po.getOrder().setAmount(juiceForClient.getAmount());
+            po.getOrder().addJuice(juiceForClient);
+            pressOrderRepository.save(po);
+        } catch (Exception err) {
+            System.out.println(err);
         }
-        else
-            juiceForClient.setAmount(po.getMaxJuiceAmount());
-        po.getOrder().setAmount(juiceForClient.getAmount());
-        po.getOrder().addJuice(juiceForClient);
-        pressOrderRepository.save(po);
     }
 
     @Override
@@ -395,35 +398,37 @@ public class PressSystemServiceImpl implements PressSystemService {
     }
 
     @Override
-    public void getJuicesForOrder(int orderId){
-        Order order = getOrderById(orderId);
-        Storage storage =storageRepository.findStorageByFruit(order.getFruit());
-        if(checkEnoughInStock(storage.getId(),order.getAmount())){
-            if(storage.getTotal() == order.getAmount()) {
-                order.setJuices(storage.getJuices());
-                storage.getJuices().clear();
-            }
-            Set<Juice> juices = storage.getJuices();
-            for (Juice juice:juices) {
-                if(juice.getAmount() <= order.getAmount()){
-                    order.addJuice(juice);
-                    order.setAmount(order.getAmount() - juice.getAmount());
-                    storage.removeJuice(juice);
-                    if(order.getAmount() == 0)
+    public void getJuicesForOrder(int orderId) {
+        try {
+            Order order = getOrderById(orderId);
+            Storage storage = storageRepository.findStorageByFruit(order.getFruit());
+            if (checkEnoughInStock(storage.getId(), order.getAmount())) {
+                if (storage.getTotal() == order.getAmount()) {
+                    order.setJuices(storage.getJuices());
+                    storage.getJuices().clear();
+                }
+                Set<Juice> juices = storage.getJuices();
+                for (Juice juice : juices) {
+                    if (juice.getAmount() <= order.getAmount()) {
+                        order.addJuice(juice);
+                        order.setAmount(order.getAmount() - juice.getAmount());
+                        storage.removeJuice(juice);
+                        if (order.getAmount() == 0)
+                            break;
+                    } else {
+//                        Juice orderJuice = new Juice(juice.getFruit(), order.getAmount(), juice.getPressDate(), juice.getFromClient());
+//                        order.addJuice(orderJuice);
+//                        juice.setAmount(juice.getAmount() - order.getAmount());
                         break;
+                    }
                 }
-                else {
-                    Juice orderJuice = new Juice(juice.getFruit(),order.getAmount(),juice.getPressDate(),juice.getFromClient());
-                    order.addJuice(orderJuice);
-                    juice.setAmount(juice.getAmount()-order.getAmount());
-                    break;
-                }
-            }
-            orderRepository.save(order);
-            storageRepository.save(storage);
+                orderRepository.save(order);
+                storageRepository.save(storage);
+            } else
+                order.setStatus(Status.CANCLED);
+        } catch (Exception err) {
+            System.out.println((err));
         }
-        else
-            order.setStatus(Status.CANCLED);
     }
 
     private Weather getWeatherData(){

@@ -32,8 +32,8 @@ public class Schedule {
     @DateTimeFormat(pattern = "yyyy-MM-dd' 'HH:mm")
     private Date endHour;
 
-    public Schedule(){}
-
+    public Schedule() {
+    }
 
 
     public Schedule(Machine machine, PressOrder pressOrder, Date startHour, Date endHour) {
@@ -43,43 +43,43 @@ public class Schedule {
         this.endHour = endHour;
     }
 
- /**   public Integer getId() {
-        return id;
-    }
+    /**   public Integer getId() {
+     return id;
+     }
 
-    public void setId(Integer id) {
-        this.id = id;
-    }
+     public void setId(Integer id) {
+     this.id = id;
+     }
 
-    public Machine getMachine() {
-        return machine;
-    }
+     public Machine getMachine() {
+     return machine;
+     }
 
-    public void setMachine(Machine machine) {
-        this.machine = machine;
-    }
+     public void setMachine(Machine machine) {
+     this.machine = machine;
+     }
 
-    public PressOrder getPressOrder() {
-        return pressOrder;
-    }
+     public PressOrder getPressOrder() {
+     return pressOrder;
+     }
 
-    public void setPressOrder(PressOrder pressOrder) {
-        this.pressOrder = pressOrder;
-    }
+     public void setPressOrder(PressOrder pressOrder) {
+     this.pressOrder = pressOrder;
+     }
 
-    public Date getStartHour() {
-        return startHour;
-    }
+     public Date getStartHour() {
+     return startHour;
+     }
 
-    public void setStartHour(Date startHour) {
-        this.startHour = startHour;
-    }
+     public void setStartHour(Date startHour) {
+     this.startHour = startHour;
+     }
 
-    public Date getEndHour() {
-        return endHour;
-    }
+     public Date getEndHour() {
+     return endHour;
+     }
 
-    public void setEndHour(Date endHour) {
-        this.endHour = endHour;
-    }**/
+     public void setEndHour(Date endHour) {
+     this.endHour = endHour;
+     }**/
 }
