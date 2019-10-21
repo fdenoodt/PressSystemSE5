@@ -6,6 +6,7 @@ import static org.junit.jupiter.api.Assertions.*;
 import java.util.LinkedList;
 import java.util.List;
 
+import org.apache.xpath.operations.Equals;
 import org.junit.Test;
 import org.junit.Before;
 import org.junit.jupiter.api.BeforeEach;
@@ -21,80 +22,75 @@ import static org.mockito.MockitoAnnotations.initMocks;
 
 
 public class PressOrderCheckServiceTest {
+
     @Mock
-    PressOrderCheckServiceTest iMockitoService;
+    PressOrderCheckService pressOrderService;
 
-    public static int validQuantityRange() {
-        return and(gt(0), lt(100));
+    public static String validFruitTypes() {
+        return or(eq("peer"), eq("appel"));
     }
 
-    public static int validMaxQuantity() {
-        return lt(100);
+    public static String appel() {
+        return eq( "appel");
     }
 
-    public static int validMinQuantity() {
-        return gt(0);
+    public static String peer() {
+        return eq( "peer");
     }
 
-    public static Fruit validFruit() {
-        Fruit fruit = new Fruit("appel");
-        return fruit;
+    public static int minimumAantalPeren() {
+        return gt(3);
+    }
+
+    public static int minimumAantalAppelen() {
+        return gt(2);
     }
 
     @Before
     public void setUp() {
         initMocks(this);
 
-        Mockito.when(iMockitoService.checkValidRangeQuantity(validQuantityRange()))
-                .thenReturn(true);
-        Mockito.when(iMockitoService.checkValidRangeQuantity(not(validQuantityRange())))
-                .thenReturn(false);
+        Mockito.when(pressOrderService.checkFruit(validFruitTypes())).thenReturn(true);
 
-        Fruit fruit = new Fruit("peer");
-        Mockito.when(iMockitoService.checkFruit(not(fruit))).thenReturn("Geen correct fruit");
+        Mockito.when(pressOrderService.checkFruit(not(validFruitTypes()))).thenReturn(false);
 
-        Mockito.when(iMockitoService.checkMaxquantityFruit(not(validMaxQuantity()))).thenReturn("Geen getal boven de 100");
-        Mockito.when(iMockitoService.checkMaxquantityFruit(validMaxQuantity())).thenReturn("Goede max waarde");
+        Mockito.when(pressOrderService.checkFruitAmount(peer(), minimumAantalPeren()))
+                .thenReturn("Order is geplaatst.");
 
-        Mockito.when(iMockitoService.checkMinquantityFruit(not(validMinQuantity()))).thenReturn("Geen getal onder de 0");
-        Mockito.when(iMockitoService.checkMinquantityFruit(validMinQuantity())).thenReturn("Goede min waarde");
+        Mockito.when(pressOrderService.checkFruitAmount(appel(), minimumAantalAppelen()))
+                .thenReturn("Order is geplaatst.");
+
+        Mockito.when(pressOrderService.checkFruitAmount(peer(), not(minimumAantalPeren())))
+                .thenReturn("Minimum aantal peren is 4 stuks.");
+
+        Mockito.when(pressOrderService.checkFruitAmount(appel(), not(minimumAantalAppelen())))
+                .thenReturn("Minimum aantal appels is 3 stuks.");
+
     }
 
-
     @Test
+    // fruit = appel en aantal 5 -> order is geplaatst
     public void test1() {
-        assertEquals("Geen getal onder de 0", iMockitoService.checkMinquantityFruit(-10));
+        assertEquals("Order is geplaatst.", pressOrderService.checkFruitAmount("appel", 5));
     }
 
     @Test
+    // fruit = peer en aantal 10 -> order is geplaatst
     public void test2() {
-        Fruit fruit = new Fruit("appel");
-        assertEquals("Bestelling wordt geplaatst", iMockitoService.checkFruit(fruit));
-        assertEquals("Goede min waarde", iMockitoService.checkMinquantityFruit(10));
-        assertEquals("Goede max waarde", iMockitoService.checkMaxquantityFruit(20));
+        assertEquals("Order is geplaatst.", pressOrderService.checkFruitAmount("peer", 10));
     }
 
     @Test
+    // fruit = appel en aantal 2 -> Minimum aantal appels is 3 stuks
     public void test3() {
-        Fruit fruit = new Fruit("none");
-        assertEquals("Type fruitsap moet gekozen zijn", iMockitoService.checkFruit(fruit));
-        assertEquals("Goede min waarde", iMockitoService.checkMinquantityFruit(10));
-        assertEquals("Goede max waarde", iMockitoService.checkMaxquantityFruit(20));
+        assertEquals("Minimum aantal appels is 3 stuks.", pressOrderService.checkFruitAmount("appel", 2));
     }
 
     @Test
+    // fruit = peer en aantal 2 -> Minimum aantal peren is 4 stuks
     public void test4() {
-        Fruit fruit = new Fruit("appel");
-        assertEquals("Bestelling wordt geplaatst", iMockitoService.checkFruit(fruit));
-        assertEquals("Goede min waarde", iMockitoService.checkMinquantityFruit(10));
-        assertEquals("Geen getal onder de 0", iMockitoService.checkMinquantityFruit(-20));
+        assertEquals("Minimum aantal peren is 4 stuks.", pressOrderService.checkFruitAmount("peer", 2));
     }
 
-    @Test
-    public void test5() {
-        Fruit fruit = new Fruit("none");
-        assertEquals("Type fruitsap moet gekozen zijn", iMockitoService.checkFruit(fruit));
-        assertEquals("Goede min waarde", iMockitoService.checkMinquantityFruit(10));
-        assertEquals("Geen getal onder de 0", iMockitoService.checkMinquantityFruit(-20));
-    }
+
 }
