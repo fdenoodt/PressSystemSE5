@@ -3,10 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="de32598e-0b46-40df-a79e-6960c3c1ac30" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../springPressOrder/src/main/java/be/springPressOrder/domain/Juice.java" beforeDir="false" afterPath="$PROJECT_DIR$/../springPressOrder/src/main/java/be/springPressOrder/domain/Juice.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../springPressOrder/src/test/java/be/springPressOrder/domain/BVAEnEPTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../springPressOrder/src/test/java/be/springPressOrder/domain/BVAEnEPTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../springPressOrder/src/test/java/be/springPressOrder/domain/MachineStatusTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../springPressOrder/src/test/java/be/springPressOrder/domain/MachineStatusTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../springPressOrder/src/test/java/be/springPressOrder/domain/MockitoTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../springPressOrder/src/test/java/be/springPressOrder/domain/MockitoTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../springPressOrder/src/test/java/be/springPressOrder/domain/DttCheckService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../springPressOrder/src/test/java/be/springPressOrder/domain/DttMockitoTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../springPressOrder/src/test/java/be/springPressOrder/domain/DttQuantityJuice.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../springPressOrder/src/test/java/be/springPressOrder/domain/IMockitoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../springPressOrder/src/main/java/be/springPressOrder/domain/IMockitoService.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -42,6 +43,7 @@
     <property name="RequestMappingsPanelWidth0" value="75" />
     <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="RequestMappingsPanelWidth2" value="75" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1570442090054" />
@@ -65,7 +67,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.MachineStatusTest">
+  <component name="RunManager" selected="JUnit.MockitoTest">
     <configuration name="BVAEnEPTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="spring-boot-web" />
       <extension name="coverage">
@@ -173,9 +175,9 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.MockitoTest" />
         <item itemvalue="JUnit.MachineStatusTest" />
         <item itemvalue="JUnit.BVAEnEPTest" />
-        <item itemvalue="JUnit.MockitoTest" />
         <item itemvalue="JUnit.DttMockitoTest" />
         <item itemvalue="JUnit.DttQuantityJuice" />
       </list>
@@ -202,7 +204,7 @@
       <workItem from="1571309361547" duration="7512000" />
       <workItem from="1571405391960" duration="2260000" />
       <workItem from="1571489635897" duration="5444000" />
-      <workItem from="1571641657304" duration="1820000" />
+      <workItem from="1571641657304" duration="3226000" />
     </task>
     <servers />
   </component>

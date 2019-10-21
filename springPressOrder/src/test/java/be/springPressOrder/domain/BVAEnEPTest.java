@@ -20,8 +20,7 @@ public class BVAEnEPTest {
             System.out.println((e));
         }
     }
-    @Test
-    public void testBVA1() {
+    @Test    public void testBVA1() {
         assertThrows(IllegalArgumentException.class,() -> juice.setAmount(4, 5, 100));
     }
     @Test

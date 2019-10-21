@@ -21,9 +21,9 @@ import static org.mockito.MockitoAnnotations.initMocks;
 
 
 
-public class MockitoTest {
+public class PressOrderCheckServiceTest {
     @Mock
-    IMockitoService iMockitoService;
+    PressOrderCheckServiceTest iMockitoService;
 
     public static int validQuantityRange() {
         return and(gt(0), lt(100));
