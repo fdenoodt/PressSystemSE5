@@ -20,7 +20,6 @@ import static org.mockito.Matchers.eq;
 import static org.mockito.MockitoAnnotations.initMocks;
 
 
-
 public class PressOrderCheckServiceTest {
     @Mock
     PressOrderCheckServiceTest iMockitoService;
@@ -63,33 +62,36 @@ public class PressOrderCheckServiceTest {
 
 
     @Test
-    public void test1 () {
+    public void test1() {
         assertEquals("Geen getal onder de 0", iMockitoService.checkMinquantityFruit(-10));
     }
 
     @Test
-    public void test2 () {
+    public void test2() {
         Fruit fruit = new Fruit("appel");
         assertEquals("Bestelling wordt geplaatst", iMockitoService.checkFruit(fruit));
         assertEquals("Goede min waarde", iMockitoService.checkMinquantityFruit(10));
         assertEquals("Goede max waarde", iMockitoService.checkMaxquantityFruit(20));
     }
+
     @Test
-    public void test3 () {
+    public void test3() {
         Fruit fruit = new Fruit("none");
         assertEquals("Type fruitsap moet gekozen zijn", iMockitoService.checkFruit(fruit));
         assertEquals("Goede min waarde", iMockitoService.checkMinquantityFruit(10));
         assertEquals("Goede max waarde", iMockitoService.checkMaxquantityFruit(20));
     }
+
     @Test
-    public void test4 () {
+    public void test4() {
         Fruit fruit = new Fruit("appel");
         assertEquals("Bestelling wordt geplaatst", iMockitoService.checkFruit(fruit));
         assertEquals("Goede min waarde", iMockitoService.checkMinquantityFruit(10));
         assertEquals("Geen getal onder de 0", iMockitoService.checkMinquantityFruit(-20));
     }
+
     @Test
-    public void test5 () {
+    public void test5() {
         Fruit fruit = new Fruit("none");
         assertEquals("Type fruitsap moet gekozen zijn", iMockitoService.checkFruit(fruit));
         assertEquals("Goede min waarde", iMockitoService.checkMinquantityFruit(10));
