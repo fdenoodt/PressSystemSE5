@@ -6,6 +6,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 import java.util.Date;
 
 @Entity
@@ -21,14 +22,19 @@ public class Schedule {
 
     @ManyToOne
     @JoinColumn(name = "machine_id")
+    @NotNull(message = "Machine cannot be null")
     private Machine machine;
 
     @ManyToOne
     @JoinColumn(name = "pressOrder_id")
+    @NotNull(message = "Pressorder cannot be null")
     private PressOrder pressOrder;
 
     @DateTimeFormat(pattern = "yyyy-MM-dd' 'HH:mm")
+    @NotNull(message = "Starthour cannot be null")
     private Date startHour;
+
+    @NotNull(message = "endhour cannot be null")
     @DateTimeFormat(pattern = "yyyy-MM-dd' 'HH:mm")
     private Date endHour;
 
@@ -37,9 +43,17 @@ public class Schedule {
 
 
     public Schedule(Machine machine, PressOrder pressOrder, Date startHour, Date endHour) {
+
+        if(machine == null) throw new NullPointerException("Machine mag niet null zijn");
         this.machine = machine;
+
+        if(pressOrder == null) throw new NullPointerException("Pressorder mag niet null zijn");
         this.pressOrder = pressOrder;
+
+        if(startHour == null) throw new NullPointerException("startHour mag niet null zijn");
         this.startHour = startHour;
+
+        if(endHour == null) throw new NullPointerException("endHour mag niet null zijn");
         this.endHour = endHour;
     }
 
