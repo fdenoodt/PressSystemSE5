@@ -18,22 +18,6 @@ public class PressOrderTest {
         this.order = new PressOrder();
     }
 
-    /*        Input: aantal appelen = -1
-            output: foutmelding dat een bestelling minimum 3 appelen moet omvatten
-
-            14
-
-            3. Input: aantal peren = 3
-                output: foutmelding dat een bestelling minimum 4 peren moet omvatten
-            4. Input: aantal appelen = 9
-                Output: 4 appelsap flessen worden besteld
-            5. Input: aantal peren 16
-                Output: 5 perensap flessen worden besteld
-         */
-
-    // we kunnen nog een test doen waar we een woord doen
-    // ook een test waarbij er geen fruit is gegeven
-
     @Test
     // Input: aantal appelen = -1
     // output: foutmelding dat een bestelling minimum 3 appelen moet omvatten
