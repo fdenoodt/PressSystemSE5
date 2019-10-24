@@ -1,7 +1,5 @@
 package be.springPressOrder.domain;
 
-import org.omg.CORBA.PUBLIC_MEMBER;
-
 import javax.persistence.*;
 import java.util.HashSet;
 import java.util.Set;
@@ -16,6 +14,7 @@ public class PressOrder {
     private int fruitAmount;
     private int maxJuiceAmount;
     private Status status;
+
     private String fruit;
 
     @OneToOne(mappedBy = "pressOrder")
@@ -43,6 +42,7 @@ public class PressOrder {
         schedules = new HashSet<>();
     }
 
+
     public void setFruitAmount(int fruitAmount) throws Exception {
         if (fruitAmount >= 3 && fruit.equals("appel")) {
             this.fruitAmount = fruitAmount;
@@ -52,9 +52,10 @@ public class PressOrder {
             this.maxJuiceAmount = (fruitAmount / 3);
         } else
             throw new IllegalArgumentException("Een bestelling moet minimum 3 appelen omvatten");
+
     }
 
-    private void setMaxJuiceAmount(int maxJuiceAmount) {
+    public void setMaxJuiceAmount(int maxJuiceAmount) {
         this.maxJuiceAmount = maxJuiceAmount;
     }
 
@@ -94,14 +95,17 @@ public class PressOrder {
         return schedules;
     }
 
+
     public void setFruit(String fruit) {
         if (fruit.equals("appel") || fruit.equals("peer"))
             this.fruit = fruit;
         else
-            throw new IllegalArgumentException("Een bestelling kan enkel fruit of peer kan bevatten.");
+            throw new IllegalArgumentException(
+                    "Een bestelling kan enkel fruit of peer kan bevatten.");
     }
 
     public String getFruit() {
         return this.fruit;
     }
+
 }

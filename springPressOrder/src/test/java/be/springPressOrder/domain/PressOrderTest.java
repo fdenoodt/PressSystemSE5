@@ -1,5 +1,6 @@
 package be.springPressOrder.domain;
 
+import be.springPressOrder.dao.OrderRepository;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.jupiter.api.BeforeAll;
@@ -66,6 +67,15 @@ public class PressOrderTest {
     @Test
     public void setFruitAanAppelsienen() throws Exception {
         assertThrows(IllegalArgumentException.class, () -> order.setFruit("appelsien"));
+    }
+
+    @Test
+    public  void processValidation() throws  Exception {
+        assertThrows(IllegalArgumentException.class, () -> order.setFruit("appelsien"));
+
+        order.setFruit("peer");
+        order.setFruitAmount(4);
+        assertEquals(order.getMaxJuiceAmount(), Math.floor((4.0 / 3)));
     }
 
 

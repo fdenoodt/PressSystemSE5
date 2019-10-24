@@ -36,6 +36,17 @@ public class Juice {
         this.pressDate = presdate;
         this.fromClient = fromClient;
     }
+//    public Juice(Fruit fruit, int amount, Date presdate, int fromClient, int maxAmount, int minAmount) throws Exception {
+//        this.fruit = fruit;
+//        this.maxAmount = maxAmount;
+//        this.minAmount = minAmount;
+//        this.amount = amount;
+//        this.pressDate = presdate;
+//        this.fromClient = fromClient;
+//        if(amount > maxAmount) throw new IllegalArgumentException("Amount mag niet groter zijn dan MaxAmount");
+//        if(minAmount > amount) throw new IllegalArgumentException("Amount moet groter zijn dan minAmount");
+//    }
+
 
     public Juice(){
 

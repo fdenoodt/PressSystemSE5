@@ -416,9 +416,9 @@ public class PressSystemServiceImpl implements PressSystemService {
                         if (order.getAmount() == 0)
                             break;
                     } else {
-                        Juice orderJuice = new Juice(juice.getFruit(), order.getAmount(), juice.getPressDate(), juice.getFromClient());
-                        order.addJuice(orderJuice);
-                        juice.setAmount(juice.getAmount() - order.getAmount());
+//                        Juice orderJuice = new Juice(juice.getFruit(), order.getAmount(), juice.getPressDate(), juice.getFromClient());
+//                        order.addJuice(orderJuice);
+//                        juice.setAmount(juice.getAmount() - order.getAmount());
                         break;
                     }
                 }
