@@ -1,27 +1,75 @@
 package be.springPressOrder;
 
-import cucumber.api.java.en.And;
-import cucumber.api.java.en.Given;
+import be.springPressOrder.domain.PressOrderCheckService;
 import cucumber.api.java.nl.Als;
 import cucumber.api.java.nl.Dan;
 import cucumber.api.java.nl.Gegeven;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
+import org.junit.Before;
+import org.mockito.Mock;
+import org.mockito.Mockito;
 
-import javax.validation.constraints.AssertTrue;
+import static org.mockito.AdditionalMatchers.*;
+import static org.mockito.AdditionalMatchers.not;
+import static org.mockito.Matchers.eq;
+import static org.mockito.MockitoAnnotations.initMocks;
+
+import static org.assertj.core.api.Assertions.assertThat;
 
 public class StepDefinitions {
+    @Mock
+    PressOrderCheckService pressOrderService;
+
+    public static String validFruitTypes() {
+        return or(eq("peer"), eq("appel"));
+    }
+
+    public static String appel() {
+        return eq( "appel");
+    }
+
+    public static String peer() {
+        return eq( "peer");
+    }
+
+    public static int minimumAantalPeren() {
+        return gt(3);
+    }
+
+    public static int minimumAantalAppelen() {
+        return gt(2);
+    }
+
+    @Before
+    public void setUp() {
+        initMocks(this);
+
+        Mockito.when(pressOrderService.checkFruit(validFruitTypes())).thenReturn(true);
+
+        Mockito.when(pressOrderService.checkFruit(not(validFruitTypes()))).thenReturn(false);
+
+        Mockito.when(pressOrderService.checkFruitAmount(peer(), minimumAantalPeren()))
+                .thenReturn("Order is geplaatst.");
+
+        Mockito.when(pressOrderService.checkFruitAmount(appel(), minimumAantalAppelen()))
+                .thenReturn("Order is geplaatst.");
+
+        Mockito.when(pressOrderService.checkFruitAmount(peer(), not(minimumAantalPeren())))
+                .thenReturn("Minimum aantal peren is 4 stuks.");
+
+        Mockito.when(pressOrderService.checkFruitAmount(appel(), not(minimumAantalAppelen())))
+                .thenReturn("Minimum aantal appels is 3 stuks.");
+
+    }
 
     @Gegeven("^Particulier bevindt zich op de bestelpagina$")
     public void particulierBevindtZichOpDeBestelpagina() {
-        
+
     }
 
     @Als("^Particulier (\\d+) peren afgeeft$")
     public void particulierPerenAfgeeft(int arg0) {
+
+        assertThat(pressOrderService.checkFruitAmount("peer", arg0)).isEqualTo();
     }
 
     @Dan("^zou de particulier (\\d+) \\+ (\\d+) gratis flessen perensap moeten krijgen$")
