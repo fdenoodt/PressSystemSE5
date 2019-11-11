@@ -2,6 +2,9 @@ package be.springPressOrder;
 
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
+import cucumber.api.java.nl.Als;
+import cucumber.api.java.nl.Dan;
+import cucumber.api.java.nl.Gegeven;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -12,13 +15,48 @@ import javax.validation.constraints.AssertTrue;
 
 public class StepDefinitions {
 
-    @Given("^I am signed in as a klant$")
-    public void iAmSignedInAsAKlant() throws Throwable {
-
+    @Gegeven("^Particulier bevindt zich op de bestelpagina$")
+    public void particulierBevindtZichOpDeBestelpagina() {
+        
     }
 
-    @And("^I am on the page where I can add a new house$")
-    public void iAmOnThePageWhereICanAddANewHouse() throws Exception {
-        throw new Exception("kl;fsda");
+    @Als("^Particulier (\\d+) peren afgeeft$")
+    public void particulierPerenAfgeeft(int arg0) {
+    }
+
+    @Dan("^zou de particulier (\\d+) \\+ (\\d+) gratis flessen perensap moeten krijgen$")
+    public void zouDeParticulierGratisFlessenPerensapMoetenKrijgen(int arg0, int arg1) {
+    }
+
+    @Als("^particulier (\\d+) appels afgeeft$")
+    public void particulierAppelsAfgeeft(int arg0) {
+    }
+
+    @Dan("^zou de particulier (\\d+) flessen appelsap moeten krijgen$")
+    public void zouDeParticulierFlessenAppelsapMoetenKrijgen(int arg0) {
+    }
+
+    @Als("^particulier (\\d+) kilo kersen afgeeft$")
+    public void particulierKiloKersenAfgeeft(int arg0) {
+    }
+
+    @Dan("^zou de particulier (\\d+) potten confituur moeten krijgen$")
+    public void zouDeParticulierPottenConfituurMoetenKrijgen(int arg0) {
+    }
+
+    @Als("^Particulier appel en peer kiest$")
+    public void particulierAppelEnPeerKiest() {
+    }
+
+    @Dan("^zou de particulier een melding krijgen dat hij maar (\\d+) soort fruit mag kiezen$")
+    public void zouDeParticulierEenMeldingKrijgenDatHijMaarSoortFruitMagKiezen(int arg0) {
+    }
+
+    @Als("^Particulier (\\d+)l flessen wenst$")
+    public void particulierLFlessenWenst(int arg0) {
+    }
+
+    @Dan("^zou zijn sap in (\\d+)l flessen moeten worden geplaatst$")
+    public void zouZijnSapInLFlessenMoetenWordenGeplaatst(int arg0) {
     }
 }
