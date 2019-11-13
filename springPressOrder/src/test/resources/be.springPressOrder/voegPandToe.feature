@@ -15,11 +15,11 @@ Dan zou de particulier 24 + 1 gratis flessen perensap moeten krijgen
 Scenario: Particulier geeft een aantal appels in ruil voor een aantal flessen appelsap
 Gegeven Particulier bevindt zich op de bestelpagina
 Als particulier 19 appels afgeeft
-Dan zou de particulier 6 flessen appelsap moeten krijgen
+Dan zou de particulier 6 + 0 gratis flessen appelsap moeten krijgen
 
-Scenario: Particulier geeft een aantal kilo kersen in ruil voor een aantal potten confituur
+Scenario: Particulier geeft een aantal kilo in ruil voor een aantal potten confituur
 Gegeven Particulier bevindt zich op de bestelpagina
-Als particulier 12 kilo kersen afgeeft
+Als particulier 20 kilogram afgeeft
 Dan zou de particulier 10 potten confituur moeten krijgen
 
 Scenario: Particulier kiest verschillende soorten fruit
