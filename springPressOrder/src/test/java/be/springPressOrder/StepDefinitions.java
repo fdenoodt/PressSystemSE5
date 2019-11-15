@@ -29,7 +29,7 @@ public class StepDefinitions {
         pressOrder = mock(PressOrderMock.class);
 
         Mockito.when(pressOrder.maakAppelsap(meerOfGelijk50FruitStukken()))
-                .thenReturn(true);
+                .thenReturn(true); // met param??
 
         Mockito.when(pressOrder.maakAppelsap(not(meerOfGelijk50FruitStukken())))
                 .thenReturn(false);
@@ -54,19 +54,21 @@ public class StepDefinitions {
 
     }
 
-    int globalPeerAantal = 0;
+    //    int globalPeerAantal = 0;
+    int aantalPerenFlessen = 0;
 
     @Als("^Particulier (\\d+) peren afgeeft$")
     public void particulierPerenAfgeeft(int peren) {
-        globalPeerAantal = peren;
+        if (pressOrder.maakPerensap(peren)) {
+            aantalPerenFlessen = (peren / 4) + 1;
+        } else {
+            aantalPerenFlessen = (peren / 4);
+        }
     }
 
     @Dan("^zou de particulier (\\d+) \\+ (\\d+) gratis flessen perensap moeten krijgen$")
     public void zouDeParticulierGratisFlessenPerensapMoetenKrijgen(int aantalFlessen, int bonus) {
-        if (pressOrder.maakPerensap(globalPeerAantal))
-            assertThat(aantalFlessen + bonus).isEqualTo((globalPeerAantal / 4) + 1);
-        else
-            assertThat(aantalFlessen).isEqualTo(globalPeerAantal / 4);
+        assertThat(aantalPerenFlessen).isEqualTo(aantalFlessen + bonus);
     }
 
 
