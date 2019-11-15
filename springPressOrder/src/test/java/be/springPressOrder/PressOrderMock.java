@@ -5,5 +5,5 @@ public interface PressOrderMock {
 
     public boolean maakPerensap(int aantalPeren);
 
-    public boolean maakConfituur(int aantalKg);
+    public int maakConfituur(int aantalKg);
 }
