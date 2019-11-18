@@ -5,33 +5,69 @@ Functionaliteit: Fruit meegeven
   Een particulier is in staat om fruit mee te geven zodat Pipo Appelsap
   dit voor deze particulier omvormt en hij zich hier zelf geen
   kopzorgen aan moet maken.
-# eventueel meer info van fruit of confituur en bij 100 flessen --> krijg 1 fles gratis
 
-Scenario: Particulier geeft een aantal peren in ruil voor een aantal flessen perensap
-Gegeven  Particulier bevindt zich op de bestelpagina
-Als Particulier 97 peren afgeeft
-Dan zou de particulier 24 + 1 gratis flessen perensap moeten krijgen
-
-Scenario: Particulier geeft een aantal appels in ruil voor een aantal flessen appelsap
-Gegeven Particulier bevindt zich op de bestelpagina
-Als particulier 19 appels afgeeft
-Dan zou de particulier 6 + 0 gratis flessen appelsap moeten krijgen
-
-Scenario: Particulier geeft een aantal kilo in ruil voor een aantal potten confituur
-Gegeven Particulier bevindt zich op de bestelpagina
-Als particulier 20 kilogram afgeeft
-Dan zou de particulier 10 potten confituur moeten krijgen
-
-Scenario: Particulier kiest verschillende soorten fruit
-Gegeven Particulier bevindt zich op de bestelpagina
-Als Particulier appel en peer kiest
-Dan zou de particulier een melding krijgen dat hij maar 1 soort fruit mag kiezen
-
-Scenario: Particulier wil kunnen meegeven aan pipo appelsap in welk recipient ze het sap moeten plaatsen
-Gegeven Particulier bevindt zich op de bestelpagina
-Als Particulier 2l flessen wenst
-Dan zou zijn sap in 2l flessen moeten worden geplaatst
+  Scenario: Particulier geeft te weinig peren mee
+    Gegeven particulier heeft 3 peren en wilt een pers-opdracht doen
+    Als de particulier deze peren afgeeft
+    Dan krijgt de particulier de volgende boodschap te zien: "Het minimum aantal peren is 4"
 
 
+  Scenario: Particulier geeft te weinig appelen mee
+    Gegeven particulier heeft 2 appelen en wilt een pers-opdracht doen
+    Als de particulier deze appelen afgeeft
+    Dan krijgt de particulier de volgende boodschap te zien: "Het minimum aantal appels is 3"
+
+  Scenario: De particulier maakt een pers-opdracht van een correct aantal peren, zonder bonus
+    Gegeven particulier heeft 4 peren en wilt een pers-opdracht doen
+    Als de particulier deze peren afgeeft
+    Dan krijgt de particulier 1 flessen en 0 bonus terug
 
 
+  Scenario: De particulier maakt een pers-opdracht van een correct aantal appelen, zonder bonus
+    Gegeven particulier heeft 3 appelen en wilt een pers-opdracht doen
+    Als de particulier deze appelen afgeeft
+    Dan krijgt de particulier 1 flessen en 0 bonus terug
+
+  Scenario: De particulier maakt een pers-opdracht van een correct aantal appelen, met bonus
+    Gegeven particulier heeft 51 appelen en wilt een pers-opdracht doen
+    Als de particulier deze appelen afgeeft
+    Dan krijgt de particulier 17 flessen en 1 bonus terug
+
+  Scenario: De particulier maakt een pers-opdracht van een correct aantal peren, met bonus
+    Gegeven particulier heeft 51 peren en wilt een pers-opdracht doen
+    Als de particulier deze peren afgeeft
+    Dan krijgt de particulier 12 flessen en 1 bonus terug
+
+  Scenario: De particulier maakt een pers-opdracht van een correct aantal appelen, zonder bonus
+    Gegeven particulier heeft 50 peren en wilt een pers-opdracht doen
+    Als de particulier deze appelen afgeeft
+    Dan krijgt de particulier 17 flessen appelsap
+
+  Scenario: De particulier maakt een pers-opdracht van een correct aantal peren, zonder bonus
+    Gegeven particulier heeft 50 peren en wilt een pers-opdracht doen
+    Als de particulier deze peren afgeeft
+    Dan krijgt de particulier 12 flessen perensap
+
+
+  Scenario: De particulier maakt een pers-opdracht van een correct aantal peren, met bonus
+    Gegeven particulier heeft 100 peren en wilt een pers-opdracht doen
+    Als de particulier deze peren afgeeft
+    Dan krijgt de particulier 25 en 1  flessen perensap
+
+
+  Scenario: De particulier maakt een pers-opdracht van een correct aantal appelen, met bonus
+    Gegeven particulier heeft 100 peren en wilt een pers-opdracht doen
+    Als de particulier deze appelen afgeeft
+    Dan krijgt de particulier 25 en 1  flessen appelen
+
+
+  Scenario: De particulier geeft te veel peren mee
+    Gegeven particulier heeft 101 peren en wilt een pers-opdracht doen
+    Als de particulier deze peren afgeeft
+    Dan krijgt de particulier de volgende foutmelding : "Het max aantal stukken fruit is 100"
+
+
+  Scenario: De particulier geeft te veel appelen  mee
+    Gegeven particulier heeft 101 peren en wilt een pers-opdracht doen
+    Als de particulier deze appelen afgeeft
+    Dan krijgt de particulier de volgende foutmelding : "Het max aantal stukken fruit is 100"
