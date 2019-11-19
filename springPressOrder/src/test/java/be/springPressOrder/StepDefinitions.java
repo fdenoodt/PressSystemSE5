@@ -19,15 +19,11 @@ import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.mockingDetails;
 
 public class StepDefinitions {
+
     @Mock
     private PressOrderMock pressOrder;
     private int aantalFruitstukken = 0;
     private String resultaat = "";
-
-    public static int meerOfGelijkAan51Stukken() {
-        return or(gt(51), eq(51));
-    }
-
 
     public static int tussen3en50Appels() {
         return and(gt(2), lt(51));
@@ -73,28 +69,28 @@ public class StepDefinitions {
         Mockito.when(pressOrder.maakAppelsap(tussen3en50Appels()))
                 .thenAnswer((Answer<String>) invocation -> {
                     int appels = Integer.valueOf(invocation.getArguments()[0].toString());
-                    int flessen = appels / 3;
+                    int flessen = appels / 3; // delen door int 3 om af te kappen naar beneden. Geen bonus
                     return String.valueOf(flessen);
                 });
 
         Mockito.when(pressOrder.maakPerensap(tussen4en50Peren()))
                 .thenAnswer((Answer<String>) invocation -> {
                     int peren = Integer.valueOf(invocation.getArguments()[0].toString());
-                    int flessen = peren / 4;
+                    int flessen = peren / 4; // delen door int 3 om af te kappen naar beneden. Geen bonus
                     return String.valueOf(flessen);
                 });
 
         Mockito.when(pressOrder.maakAppelsap(tussen51en100FruitStukken()))
                 .thenAnswer((Answer<String>) invocation -> {
                     int appels = Integer.valueOf(invocation.getArguments()[0].toString());
-                    int flessen = (appels / 3) + 1;
+                    int flessen = (appels / 3) + 1; // + 1 want er is een bonus
                     return String.valueOf(flessen);
                 });
 
         Mockito.when(pressOrder.maakPerensap(tussen51en100FruitStukken()))
                 .thenAnswer((Answer<String>) invocation -> {
                     int peren = Integer.valueOf(invocation.getArguments()[0].toString());
-                    int flessen = (peren / 4) + 1;
+                    int flessen = (peren / 4) + 1; // + 1 want er is een bonus
                     return String.valueOf(flessen);
                 });
 

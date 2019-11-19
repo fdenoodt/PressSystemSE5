@@ -6,6 +6,13 @@ Functionaliteit: Fruit meegeven
   dit voor deze particulier omvormt en hij zich hier zelf geen
   kopzorgen aan moet maken.
 
+  Bij appelen moeten er minstens 3 appelen ingediend worden,
+  zodat een volledige fles gevuld kan worden. Bij peren is dit minimum echter 4.
+
+  Maximum van 100 fruit stukken.
+
+  Vanaf 51 fruit stukken krijgt de particulier 1 fles als bonus bovenop zijn bestelling.
+
   Scenario: Particulier geeft te weinig peren mee
     Gegeven particulier heeft 3 peren en wilt een pers-opdracht doen
     Als de particulier deze peren afgeeft
