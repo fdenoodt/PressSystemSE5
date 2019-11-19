@@ -131,7 +131,6 @@ public class StepDefinitions {
         assertThat(resultaat).isEqualTo(verwachtResultaat);
     }
 
-
     @Dan("^krijgt de particulier de volgende foutmelding : \"([^\"]*)\"$")
     public void krijgtDeParticulierDeVolgendeFoutmelding(String errorMessage) throws Throwable {
         assertThat(resultaat).isEqualTo(errorMessage);
