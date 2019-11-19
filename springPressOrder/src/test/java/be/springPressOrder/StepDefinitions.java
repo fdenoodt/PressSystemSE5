@@ -7,6 +7,10 @@ import cucumber.api.java.nl.Dan;
 import cucumber.api.java.nl.Gegeven;
 import org.mockito.Mock;
 import org.mockito.Mockito;
+import org.mockito.invocation.InvocationOnMock;
+import org.mockito.stubbing.Answer;
+
+import javax.persistence.Convert;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.AdditionalMatchers.*;
@@ -24,16 +28,17 @@ public class StepDefinitions {
         return or(gt(51), eq(51));
     }
 
-    public static int minderDan51Stukken() {
-        return lt(51);
+
+    public static int tussen3en50Appels() {
+        return and(gt(2), lt(51));
     }
 
-    public static int meerOfGelijkAan3Appels() {
-        return or(gt(3), eq(3));
+    public static int tussen4en50Peren() {
+        return and(gt(3), lt(51));
     }
 
-    public static int meerOfGelijkAan4Peren() {
-        return or(gt(4), eq(4));
+    public static int tussen51en100FruitStukken() {
+        return and(gt(50), lt(101));
     }
 
     public static int minderDan3Appels() {
@@ -65,10 +70,35 @@ public class StepDefinitions {
         Mockito.when(pressOrder.maakAppelsap(minderDan3Appels()))
                 .thenReturn("Het minimum aantal appels is 3");
 
-//        Mockito.when(pressOrder.maakAppelsap(meerOfGelijkAan4Peren()))
-//                .thenReturn(hetGetal / 4)
-    }
+        Mockito.when(pressOrder.maakAppelsap(tussen3en50Appels()))
+                .thenAnswer((Answer<String>) invocation -> {
+                    int appels = Integer.valueOf(invocation.getArguments()[0].toString());
+                    int flessen = appels / 3;
+                    return String.valueOf(flessen);
+                });
 
+        Mockito.when(pressOrder.maakPerensap(tussen4en50Peren()))
+                .thenAnswer((Answer<String>) invocation -> {
+                    int peren = Integer.valueOf(invocation.getArguments()[0].toString());
+                    int flessen = peren / 4;
+                    return String.valueOf(flessen);
+                });
+
+        Mockito.when(pressOrder.maakAppelsap(tussen51en100FruitStukken()))
+                .thenAnswer((Answer<String>) invocation -> {
+                    int appels = Integer.valueOf(invocation.getArguments()[0].toString());
+                    int flessen = (appels / 3) + 1;
+                    return String.valueOf(flessen);
+                });
+
+        Mockito.when(pressOrder.maakPerensap(tussen51en100FruitStukken()))
+                .thenAnswer((Answer<String>) invocation -> {
+                    int peren = Integer.valueOf(invocation.getArguments()[0].toString());
+                    int flessen = (peren / 4) + 1;
+                    return String.valueOf(flessen);
+                });
+
+    }
 
     @Gegeven("^particulier heeft (\\d+) peren en wilt een pers-opdracht doen$")
     public void particulierHeeftPerenEnWiltEenPersOpdrachtDoen(int fruitstukken) {
@@ -79,7 +109,6 @@ public class StepDefinitions {
     public void particulierHeeftAppelenEnWiltEenPersOpdrachtDoen(int fruitstukken) {
         aantalFruitstukken = fruitstukken;
     }
-
 
     @Als("^de particulier deze peren afgeeft$")
     public void deParticulierDezePerenAfgeeft() {
@@ -97,29 +126,11 @@ public class StepDefinitions {
     }
 
     @Dan("^krijgt de particulier (\\d+) flessen en (\\d+) bonus terug$")
-    public void krijgtDeParticulierFlessenEnBonusTerug(int arg0, int arg1) {
-
+    public void krijgtDeParticulierFlessenEnBonusTerug(int flessen, int bonus) {
+        String verwachtResultaat = String.valueOf(flessen + bonus);
+        assertThat(resultaat).isEqualTo(verwachtResultaat);
     }
 
-    @Dan("^krijgt de particulier (\\d+) flessen appelsap$")
-    public void krijgtDeParticulierFlessenAppelsap(int arg0) {
-
-    }
-
-    @Dan("^krijgt de particulier (\\d+) flessen perensap$")
-    public void krijgtDeParticulierFlessenPerensap(int arg0) {
-
-    }
-
-    @Dan("^krijgt de particulier (\\d+) en (\\d+)  flessen perensap$")
-    public void krijgtDeParticulierEnFlessenPerensap(int arg0, int arg1) {
-
-    }
-
-    @Dan("^krijgt de particulier (\\d+) en (\\d+)  flessen appelen$")
-    public void krijgtDeParticulierEnFlessenAppelen(int arg0, int arg1) {
-
-    }
 
     @Dan("^krijgt de particulier de volgende foutmelding : \"([^\"]*)\"$")
     public void krijgtDeParticulierDeVolgendeFoutmelding(String errorMessage) throws Throwable {
@@ -127,71 +138,4 @@ public class StepDefinitions {
     }
 
 
-//
-//    int globalPeerAantal = 0;
-//    int aantalPerenFlessen = 0;
-//
-//    @Als("^Particulier (\\d+) peren afgeeft$")
-//    public void particulierPerenAfgeeft(int peren) {
-//        if (pressOrder.maakPerensap(peren)) {
-//            aantalPerenFlessen = (peren / 4) + 1;
-//        } else {
-//            aantalPerenFlessen = (peren / 4);
-//        }
-//    }
-//
-//    @Dan("^zou de particulier (\\d+) \\+ (\\d+) gratis flessen perensap moeten krijgen$")
-//    public void zouDeParticulierGratisFlessenPerensapMoetenKrijgen(int aantalFlessen, int bonus) {
-//        assertThat(aantalPerenFlessen).isEqualTo(aantalFlessen + bonus);
-//    }
-//
-//
-//    int aantalAppelFlessen = 0;
-//
-//    //@Test
-//    @Als("^particulier (\\d+) appels afgeeft$")
-//    public void particulierAppelsAfgeeft(int appelen) {
-//        if (pressOrder.maakAppelsap(appelen)) {
-//            aantalAppelFlessen = (appelen / 3) + 1;
-//        } else {
-//            aantalAppelFlessen = (appelen / 3);
-//        }
-//    }
-//
-//    //@Test
-//    @Dan("^zou de particulier (\\d+) \\+ (\\d+) gratis flessen appelsap moeten krijgen$")
-//    public void zouDeParticulierFlessenAppelsapMoetenKrijgen(int aantalFlessen, int bonus) {
-//        assertThat(aantalAppelFlessen).isEqualTo(aantalFlessen + bonus);
-//    }
-//
-//    int kersenPotten = 0;
-//
-//    @Als("^particulier (\\d+) kilogram afgeeft$")
-//    public void particulierKiloKersenAfgeeft(int kersenKg) {
-//        kersenPotten = pressOrder.maakConfituur(kersenKg)/2;
-//    }
-//
-//    @Dan("^zou de particulier (\\d+) potten confituur moeten krijgen$")
-//    public void zouDeParticulierPottenConfituurMoetenKrijgen(int aantalPottenConfituur) {
-//        if (kersenPotten != 0)
-//            assertThat(aantalPottenConfituur).isEqualTo(kersenPotten);
-//        else
-//            assertThat(kersenPotten).isEqualTo(0);
-//    }
-//
-//    @Als("^Particulier appel en peer kiest$")
-//    public void particulierAppelEnPeerKiest() {
-//    }
-//
-//    @Dan("^zou de particulier een melding krijgen dat hij maar (\\d+) soort fruit mag kiezen$")
-//    public void zouDeParticulierEenMeldingKrijgenDatHijMaarSoortFruitMagKiezen(int arg0) {
-//    }
-//
-//    @Als("^Particulier (\\d+)l flessen wenst$")
-//    public void particulierLFlessenWenst(int arg0) {
-//    }
-//
-//    @Dan("^zou zijn sap in (\\d+)l flessen moeten worden geplaatst$")
-//    public void zouZijnSapInLFlessenMoetenWordenGeplaatst(int arg0) {
-//    }
 }

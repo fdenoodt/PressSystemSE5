@@ -17,6 +17,7 @@ Functionaliteit: Fruit meegeven
     Als de particulier deze appelen afgeeft
     Dan krijgt de particulier de volgende boodschap te zien: "Het minimum aantal appels is 3"
 
+
   Scenario: De particulier maakt een pers-opdracht van een correct aantal peren, zonder bonus
     Gegeven particulier heeft 4 peren en wilt een pers-opdracht doen
     Als de particulier deze peren afgeeft
@@ -28,37 +29,41 @@ Functionaliteit: Fruit meegeven
     Als de particulier deze appelen afgeeft
     Dan krijgt de particulier 1 flessen en 0 bonus terug
 
+
   Scenario: De particulier maakt een pers-opdracht van een correct aantal appelen, met bonus
     Gegeven particulier heeft 51 appelen en wilt een pers-opdracht doen
     Als de particulier deze appelen afgeeft
     Dan krijgt de particulier 17 flessen en 1 bonus terug
+
 
   Scenario: De particulier maakt een pers-opdracht van een correct aantal peren, met bonus
     Gegeven particulier heeft 51 peren en wilt een pers-opdracht doen
     Als de particulier deze peren afgeeft
     Dan krijgt de particulier 12 flessen en 1 bonus terug
 
+
   Scenario: De particulier maakt een pers-opdracht van een correct aantal appelen, zonder bonus
-    Gegeven particulier heeft 50 peren en wilt een pers-opdracht doen
+    Gegeven particulier heeft 50 appelen en wilt een pers-opdracht doen
     Als de particulier deze appelen afgeeft
-    Dan krijgt de particulier 17 flessen appelsap
+    Dan krijgt de particulier 16 flessen en 0 bonus terug
+
 
   Scenario: De particulier maakt een pers-opdracht van een correct aantal peren, zonder bonus
     Gegeven particulier heeft 50 peren en wilt een pers-opdracht doen
     Als de particulier deze peren afgeeft
-    Dan krijgt de particulier 12 flessen perensap
+    Dan krijgt de particulier 12 flessen en 0 bonus terug
 
 
   Scenario: De particulier maakt een pers-opdracht van een correct aantal peren, met bonus
     Gegeven particulier heeft 100 peren en wilt een pers-opdracht doen
     Als de particulier deze peren afgeeft
-    Dan krijgt de particulier 25 en 1  flessen perensap
+    Dan krijgt de particulier 25 flessen en 1 bonus terug
 
 
   Scenario: De particulier maakt een pers-opdracht van een correct aantal appelen, met bonus
-    Gegeven particulier heeft 100 peren en wilt een pers-opdracht doen
+    Gegeven particulier heeft 100 appelen en wilt een pers-opdracht doen
     Als de particulier deze appelen afgeeft
-    Dan krijgt de particulier 25 en 1  flessen appelen
+    Dan krijgt de particulier 33 flessen en 1 bonus terug
 
 
   Scenario: De particulier geeft te veel peren mee
