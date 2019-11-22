@@ -18,7 +18,7 @@ import static org.mockito.Matchers.eq;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.mockingDetails;
 
-public class StepDefinitions {
+public class StepDefinitionsNonUI {
 
     @Mock
     private PressOrderMock pressOrder;

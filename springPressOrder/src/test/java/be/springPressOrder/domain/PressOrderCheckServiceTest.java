@@ -1,22 +1,13 @@
 package be.springPressOrder.domain;
 
 
-import static org.junit.jupiter.api.Assertions.*;
-
-import java.util.LinkedList;
-import java.util.List;
-
-import org.apache.xpath.operations.Equals;
-import org.junit.Test;
 import org.junit.Before;
-import org.junit.jupiter.api.BeforeEach;
+import org.junit.Test;
 import org.mockito.Mock;
 import org.mockito.Mockito;
 
-import static org.mockito.Mockito.*;
-import static org.mockito.AdditionalMatchers.gt;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.AdditionalMatchers.*;
-import static org.mockito.Matchers.anyInt;
 import static org.mockito.Matchers.eq;
 import static org.mockito.MockitoAnnotations.initMocks;
 

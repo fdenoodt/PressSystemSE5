@@ -1,24 +1,18 @@
 package be.springPressOrder.controllers;
 
 import be.springPressOrder.Data.PressOrderData;
-import be.springPressOrder.domain.Order;
 import be.springPressOrder.domain.PressOrder;
 import be.springPressOrder.services.PressSystemService;
 import be.springPressOrder.services.UserService;
-import lombok.Value;
 import lombok.extern.slf4j.Slf4j;
-import org.apache.xpath.operations.Mod;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.access.annotation.Secured;
 import org.springframework.security.access.prepost.PostAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.ui.ModelMap;
 import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.validation.Valid;
 
