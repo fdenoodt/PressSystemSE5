@@ -7,6 +7,8 @@ import cucumber.api.java.en.When;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.Select;
+
 
 public class StepDefinitionsUI {
 
@@ -28,26 +30,28 @@ public class StepDefinitionsUI {
 
     @And("^de particulier begeeft zich op de pagina om een nieuwe pressorder aan te maken$")
     public void deParticulierBegeeftZichOpDePaginaOmEenNieuwePressorderAanTeMaken() {
+        driver.navigate().to("http://localhost:8080/pressorder/new");
     }
 
     @When("^particulier (\\d+) peren invoert in het veld \"([^\"]*)\"$")
-    public void particulierPerenInvoertInHetVeld(int arg0, String arg1) throws Throwable {
-        // Write code here that turns the phrase above into concrete actions
+    public void particulierPerenInvoertInHetVeld(int aantal, String id) throws Throwable {
+        driver.findElement(By.id(id)).sendKeys(String.valueOf( aantal));
     }
 
     @And("^hij duidt peer aan in de combobox \"([^\"]*)\"$")
-    public void hijDuidtPeerAanInDeCombobox(String arg0) throws Throwable {
-        // Write code here that turns the phrase above into concrete actions
+    public void hijDuidtPeerAanInDeCombobox(String id) throws Throwable {
+        Select select=new Select(driver.findElement(By.id(id)));
+        select.selectByValue("2");
     }
 
     @And("^hij klikt op Submit$")
     public void hijKliktOpSubmit() {
-
+        driver.findElement(By.id("btnSubmit")).click();
     }
 
     @Then("^krijgt de particulier de volgende boodschap op het scherm te zien: \"([^\"]*)\"$")
     public void krijgtDeParticulierDeVolgendeBoodschapOpHetSchermTeZien(String arg0) throws Throwable {
-        // Write code here that turns the phrase above into concrete actions
+        
     }
 
 }

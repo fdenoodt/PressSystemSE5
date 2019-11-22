@@ -8,8 +8,8 @@ Feature: Fruit meegeven via UI
   Scenario: Particulier geeft te weinig peren mee via UI
     Given particulier is ingelogd
     And de particulier begeeft zich op de pagina om een nieuwe pressorder aan te maken
-    When particulier 3 peren invoert in het veld "fruitamount"
-    And hij duidt peer aan in de combobox "fruitsoort"
+    When particulier 3 peren invoert in het veld "fruitAmount"
+    And hij duidt peer aan in de combobox "fruitId"
     And hij klikt op Submit
     Then krijgt de particulier de volgende boodschap op het scherm te zien: "Het minimum aantal peren is 4"
 
