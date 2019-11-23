@@ -34,28 +34,27 @@ public class StepDefinitionsUI {
         driver.findElement(By.id("btnSubmit")).click();
     }
 
-    //bestaat
+
     @And("^de particulier begeeft zich op de pagina om een nieuwe pressorder aan te maken$")
     public void deParticulierBegeeftZichOpDePaginaOmEenNieuwePressorderAanTeMaken() {
         driver.navigate().to("http://localhost:8080/pressorder/new");
     }
-    //bestaat
+
     @When("^particulier (\\d+) peren invoert in het veld \"([^\"]*)\"$")
     public void particulierPerenInvoertInHetVeld(int aantal, String id) throws Throwable {
         driver.findElement(By.id(id)).sendKeys(String.valueOf( aantal));
     }
-    //bestaat
+
     @And("^hij duidt peer aan in de combobox \"([^\"]*)\"$")
     public void hijDuidtPeerAanInDeCombobox(String id) throws Throwable {
         Select select=new Select(driver.findElement(By.id(id)));
         select.selectByValue("2");
     }
-    //bestaat
+
     @And("^hij klikt op Submit$")
     public void hijKliktOpSubmit() {
         driver.findElement(By.id("btnSubmit")).click();
     }
-    //bestaat
 
 
     @When("^de particulier (\\d+) appelen invoert in het veld \"([^\"]*)\"$")
@@ -75,7 +74,7 @@ public class StepDefinitionsUI {
         assertThat(driver.findElement(By.id(field)).getText()).isEqualTo(msg);
     }
 
-    //Moet resultaat field maken?
+
     @Then("^krijgt de particulier (\\d+) flessen$")
     public void krijgtDeParticulierFlessen(int aantal) {
         assertThat(driver.findElement(By.id("resultaat")).getText()).isEqualTo(aantal);
