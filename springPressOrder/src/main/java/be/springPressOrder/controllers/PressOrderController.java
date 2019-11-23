@@ -68,15 +68,24 @@ public class PressOrderController {
     @RequestMapping(value = "pressOrder", method = RequestMethod.POST)
     public String savePressOrder(@Valid PressOrderData pressOrder, Errors errors, Model model) {
         String message="";
-        try{
-            if(errors.hasErrors()){
-                message = "Correct input errors please";
-                throw new IllegalArgumentException();
-            }
-        }
-        catch(IllegalArgumentException e){
 
+        switch(pressOrder.fruitId) {
+            //appel
+            case 1:
+                if(pressOrder.fruitAmount == null)
+                    message = "Gelieve een waarde in te geven";
+                if(pressOrder.fruitAmount <=2)
+                    message = "Het minimum aantal appelen is 3";
+                break;
+            //peer
+            case 2:
+                if(pressOrder.fruitAmount == null)
+                    message = "Gelieve een waarde in te geven";
+                if(pressOrder.fruitAmount <=3)
+                    message = "Het minimum aantal peren is 4";
+                break;
         }
+
         if(!message.equals("")){
             model.addAttribute("message",message);
             model.addAttribute("objFruits",pressSystemService.listAllFruits());

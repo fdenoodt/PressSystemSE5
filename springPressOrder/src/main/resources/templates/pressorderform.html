@@ -14,7 +14,7 @@
     <div>
         <form class="form-horizontal" th:object="${objPressOrder}" th:action="@{/pressOrder}" method="post">
             <input type="hidden" th:field="*{id}"/>
-            <div class="well" th:if="${message}!=null" th:text="${message}">
+            <div class="well" id="msgError" th:if="${message}!=null" th:text="${message}">
 
             </div>
             <div class="form-group">
