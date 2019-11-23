@@ -73,7 +73,7 @@ public class PressOrderController {
             //appel
             case 1:
                 if(pressOrder.fruitAmount == null)
-                    message = "Gelieve een waarde in te geven";
+                    message = "Gelieve een aantal appels in te geven";
                 if(pressOrder.fruitAmount <=2)
                     message = "Het minimum aantal appelen is 3";
                 break;

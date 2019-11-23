@@ -74,5 +74,12 @@ public class StepDefinitionsUI {
     public void krijgtDeParticulierDeVolgendeBoodschapTeZienInHetField(String msg, String field) throws Throwable {
         assertThat(driver.findElement(By.id(field)).getText()).isEqualTo(msg);
     }
+
+    //Moet resultaat field maken?
+    @Then("^krijgt de particulier (\\d+) flessen$")
+    public void krijgtDeParticulierFlessen(int aantal) {
+        assertThat(driver.findElement(By.id("resultaat")).getText()).isEqualTo(aantal);
+    }
+
 }
 
