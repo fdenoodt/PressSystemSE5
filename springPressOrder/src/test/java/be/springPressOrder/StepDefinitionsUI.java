@@ -78,7 +78,7 @@ public class StepDefinitionsUI {
 
     @Then("^krijgt de particulier (\\d+) flessen$")
     public void krijgtDeParticulierFlessen(int aantal) {
-        WebElement element = (driver.findElement(By.tagName("resultaat")));
+        WebElement element = (driver.findElement(By.id("resultaat")));
         String text = element.getText();
         assertThat(text).contains(String.valueOf(aantal));
     }
