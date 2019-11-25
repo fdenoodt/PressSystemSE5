@@ -8,6 +8,7 @@ import cucumber.api.java.en.When;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
@@ -24,7 +25,7 @@ public class StepDefinitionsUI {
 
     @Given("^particulier is ingelogd$")
     public void particulierIsIngelogd() {
-        System.setProperty("webdriver.chrome.driver", "C:\\Users\\steve\\Downloads\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "chromedriver.exe");
         driver = new ChromeDriver();
         driver.navigate().to("http://localhost:8080/login");
 
@@ -42,12 +43,12 @@ public class StepDefinitionsUI {
 
     @When("^particulier (\\d+) peren invoert in het veld \"([^\"]*)\"$")
     public void particulierPerenInvoertInHetVeld(int aantal, String id) throws Throwable {
-        driver.findElement(By.id(id)).sendKeys(String.valueOf( aantal));
+        driver.findElement(By.id(id)).sendKeys(String.valueOf(aantal));
     }
 
     @And("^hij duidt peer aan in de combobox \"([^\"]*)\"$")
     public void hijDuidtPeerAanInDeCombobox(String id) throws Throwable {
-        Select select=new Select(driver.findElement(By.id(id)));
+        Select select = new Select(driver.findElement(By.id(id)));
         select.selectByValue("2");
     }
 
@@ -60,12 +61,12 @@ public class StepDefinitionsUI {
     @When("^de particulier (\\d+) appelen invoert in het veld \"([^\"]*)\"$")
     public void deParticulierAppelenInvoertInHetVeld(int aantal, String id) throws Throwable {
         // Write code here that turns the phrase above into concrete actions
-        driver.findElement(By.id(id)).sendKeys(String.valueOf( aantal));
+        driver.findElement(By.id(id)).sendKeys(String.valueOf(aantal));
     }
 
     @And("^hij duidt appel aan in de combobox \"([^\"]*)\"$")
     public void hijDuidtAppelAanInDeCombobox(String id) throws Throwable {
-        Select select=new Select(driver.findElement(By.id(id)));
+        Select select = new Select(driver.findElement(By.id(id)));
         select.selectByValue("1");
     }
 
@@ -77,7 +78,9 @@ public class StepDefinitionsUI {
 
     @Then("^krijgt de particulier (\\d+) flessen$")
     public void krijgtDeParticulierFlessen(int aantal) {
-        assertThat(driver.findElement(By.id("resultaat")).getText()).isEqualTo(aantal);
+        WebElement element = (driver.findElement(By.tagName("resultaat")));
+        String text = element.getText();
+        assertThat(text).contains(String.valueOf(aantal));
     }
 
 }
