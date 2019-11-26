@@ -8,7 +8,7 @@ public class SignInPage extends AbstractPage {
         super(driver);
     }
 
-    public MainPage signIn(String email, String password) {
+    public MainPage signIn() {
         driver.findElement(By.id("username")).sendKeys("admin");
         driver.findElement(By.id("password")).sendKeys("password");
 

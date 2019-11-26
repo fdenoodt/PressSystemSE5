@@ -8,6 +8,7 @@ import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
+import org.hibernate.boot.model.relational.Database;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -29,7 +30,7 @@ public class StepDefinitionsUI {
     @Given("^particulier is ingelogd$")
     public void particulierIsIngelogd() {
         mainPage.navigateToSignInPage();
-        signInPage.signIn("username", "password");
+        signInPage.signIn();
     }
 
 
@@ -39,7 +40,7 @@ public class StepDefinitionsUI {
     }
 
     @When("^particulier (\\d+) peren invoert in het veld$")
-    public void particulierPerenInvoertInHetVeld(int aantal) throws Throwable {
+    public void particulierPerenInvoertInHetVeld(int aantal) {
         pressOrderPage.voerPerenIn(aantal);
     }
 
@@ -51,16 +52,15 @@ public class StepDefinitionsUI {
 
 
     @When("^de particulier (\\d+) appelen invoert in het veld$")
-    public void deParticulierAppelenInvoertInHetVeld(int aantal) throws Throwable {
+    public void deParticulierAppelenInvoertInHetVeld(int aantal) {
         pressOrderPage.voerAppelenIn(aantal);
     }
 
     @Then("^krijgt de particulier de volgende boodschap te zien : \"([^\"]*)\" in het veld$")
-    public void krijgtDeParticulierDeVolgendeBoodschapTeZienInHetField(String msg) throws Throwable {
+    public void krijgtDeParticulierDeVolgendeBoodschapTeZienInHetField(String msg) {
         String text = pressOrderPage.bekijkFoutMelding();
         assertThat(text).isEqualTo(msg);
     }
-
 
     @Then("^krijgt de particulier (\\d+) flessen$")
     public void krijgtDeParticulierFlessen(int aantal) {
