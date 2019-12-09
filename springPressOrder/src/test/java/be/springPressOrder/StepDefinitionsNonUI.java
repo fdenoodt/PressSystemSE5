@@ -1,22 +1,17 @@
 package be.springPressOrder;
 
-import cucumber.api.PendingException;
 import cucumber.api.java.Before;
 import cucumber.api.java.nl.Als;
 import cucumber.api.java.nl.Dan;
 import cucumber.api.java.nl.Gegeven;
+import net.thucydides.core.annotations.Step;
 import org.mockito.Mock;
 import org.mockito.Mockito;
-import org.mockito.invocation.InvocationOnMock;
 import org.mockito.stubbing.Answer;
-
-import javax.persistence.Convert;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.AdditionalMatchers.*;
-import static org.mockito.Matchers.eq;
 import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.mockingDetails;
 
 public class StepDefinitionsNonUI {
 
@@ -95,6 +90,7 @@ public class StepDefinitionsNonUI {
                 });
 
     }
+
 
     @Gegeven("^particulier heeft (\\d+) peren en wilt een pers-opdracht doen$")
     public void particulierHeeftPerenEnWiltEenPersOpdrachtDoen(int fruitstukken) {

@@ -13,8 +13,9 @@ Functionaliteit: Fruit meegeven
 
   Vanaf 51 fruit stukken krijgt de particulier 1 fles als bonus bovenop zijn bestelling.
 
+  @Manual
   Scenario: Particulier geeft te weinig peren mee
-    Gegeven particulier heeft 3 peren en wilt een pers-opdracht doen
+    Gegeven particulier heeft 4 peren en wilt een pers-opdracht doen
     Als de particulier deze peren afgeeft
     Dan krijgt de particulier de volgende boodschap te zien: "Het minimum aantal peren is 4"
 
@@ -38,7 +39,7 @@ Functionaliteit: Fruit meegeven
 
 
   Scenario: De particulier maakt een pers-opdracht van een correct aantal appelen, met bonus
-    Gegeven particulier heeft 51 appelen en wilt een pers-opdracht doen
+    Gegeven particulier heeft 50 appelen en wilt een pers-opdracht doen
     Als de particulier deze appelen afgeeft
     Dan krijgt de particulier 17 flessen en 1 bonus terug
 
@@ -62,7 +63,7 @@ Functionaliteit: Fruit meegeven
 
 
   Scenario: De particulier maakt een pers-opdracht van een correct aantal peren, met bonus
-    Gegeven particulier heeft 100 peren en wilt een pers-opdracht doen
+    Gegeven particulier heeft 1 peren en wilt een pers-opdracht doen
     Als de particulier deze peren afgeeft
     Dan krijgt de particulier 25 flessen en 1 bonus terug
 
