@@ -1,24 +1,18 @@
 package be.springPressOrder.controllers;
 
 import be.springPressOrder.Data.PressOrderData;
-import be.springPressOrder.domain.Order;
 import be.springPressOrder.domain.PressOrder;
 import be.springPressOrder.services.PressSystemService;
 import be.springPressOrder.services.UserService;
-import lombok.Value;
 import lombok.extern.slf4j.Slf4j;
-import org.apache.xpath.operations.Mod;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.access.annotation.Secured;
 import org.springframework.security.access.prepost.PostAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.ui.ModelMap;
 import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.validation.Valid;
 
@@ -74,15 +68,24 @@ public class PressOrderController {
     @RequestMapping(value = "pressOrder", method = RequestMethod.POST)
     public String savePressOrder(@Valid PressOrderData pressOrder, Errors errors, Model model) {
         String message="";
-        try{
-            if(errors.hasErrors()){
-                message = "Correct input errors please";
-                throw new IllegalArgumentException();
-            }
-        }
-        catch(IllegalArgumentException e){
 
+        switch(pressOrder.fruitId) {
+            //appel
+            case 1:
+                if(pressOrder.fruitAmount == null)
+                    message = "Gelieve een aantal appels in te geven";
+                if(pressOrder.fruitAmount <=2)
+                    message = "Het minimum aantal appelen is 3";
+                break;
+            //peer
+            case 2:
+                if(pressOrder.fruitAmount == null)
+                    message = "Gelieve een waarde in te geven";
+                if(pressOrder.fruitAmount <=3)
+                    message = "Het minimum aantal peren is 4";
+                break;
         }
+
         if(!message.equals("")){
             model.addAttribute("message",message);
             model.addAttribute("objFruits",pressSystemService.listAllFruits());
